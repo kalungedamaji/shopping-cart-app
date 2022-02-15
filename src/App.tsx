@@ -9,6 +9,7 @@ const  App:React.FC<AppProps> = ({appName})=> {
     <div>
      <h1>{appName}</h1>
      <h5>Laptop Bagpack</h5>
+     <h6>A Blue coloured leather bag with capacity of 15l</h6>
     </div>
    
   );
