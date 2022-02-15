@@ -2,7 +2,9 @@
 
 ### Feature of Online Shopping Store 
 #### `Story 1: List out one product with title, description and price`
-#####  Learnings
+![Product](readme/productdesc.png?raw=true "Title")
+
+ > ###Learnings
  
             
 
