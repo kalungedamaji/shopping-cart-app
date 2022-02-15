@@ -9,6 +9,7 @@ const  App:React.FC<AppProps> = ({appName})=> {
     <div>
      <h1>{appName}</h1>
     </div>
+    
   );
 }
 
