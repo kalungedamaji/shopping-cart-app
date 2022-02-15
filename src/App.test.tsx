@@ -12,9 +12,15 @@ it('renders learn react link', () => {
   expect(shoppingCartHeaderElement).toBeInTheDocument();
 });
 
-it.only('should display product name', () => {
+it('should display product name', () => {
   render(<App appName={'inputAppName'} />);
   const nameElement = screen.getByText(/Laptop Bagpack/);
   expect(nameElement).toBeInTheDocument();
+});
+
+it('should display product description', () => {
+  render(<App appName={'inputAppName'} />);
+  const descriptionElement = screen.getByText(/A Blue coloured leather bag with capacity of 15l/i);
+  expect(descriptionElement).toBeInTheDocument();
 });
 });
