@@ -23,4 +23,10 @@ it('should display product description', () => {
   const descriptionElement = screen.getByText(/A Blue coloured leather bag with capacity of 15l/i);
   expect(descriptionElement).toBeInTheDocument();
 });
+
+it('should display product price', () => {
+  render(<App appName={'inputAppName'} />);
+  const priceElement = screen.getByText(/INR.5000/i);
+  expect(priceElement).toBeInTheDocument();
+});
 });
