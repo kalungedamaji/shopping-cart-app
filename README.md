@@ -4,7 +4,7 @@
 #### `Story 1: List out one product with title, description and price`
 ![Product](readme/productdesc.png?raw=true "Title")
 
-> ###Learnings
+>Learnings
  
             
 
