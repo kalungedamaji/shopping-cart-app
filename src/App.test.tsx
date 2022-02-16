@@ -26,7 +26,13 @@ it('should display product description', () => {
 
 it('should display product price', () => {
   render(<App appName={'inputAppName'} />);
-  const priceElement = screen.getByText(/INR.5000/i);
+  const priceElement = screen.getByRole('heading', {name:"INR.5000"});
   expect(priceElement).toBeInTheDocument();
+});
+
+it('should display product image', () => {
+  render(<App appName={'inputAppName'} />);
+  const imageElement = screen.getByRole('img');
+  expect(imageElement).toHaveAttribute('src','https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')
 });
 });
