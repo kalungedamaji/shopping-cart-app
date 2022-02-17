@@ -1,8 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
 import App from './App';
+import { render,screen } from '@testing-library/react';
 
-it('should display App name', () => {
+test('renders title of the page', () => {
   const inputAppName="Manyvar Shop";
   render(<App appName={inputAppName}/>);
 
