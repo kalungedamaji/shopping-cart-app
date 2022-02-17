@@ -1,6 +1,6 @@
 # Online Shopping Store.
 
-### Feature of Online Shopping Store 
+### Features of Online Shopping Store 
 :white_check_mark: `Story 1: List out one product with title, description and price`
 - [ ] `Story 2: Add image and Add to Cart Button to existing Product and list out multiple Product`
 ![Product](readme/multipleProducts.png?raw=true "Title")
