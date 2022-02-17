@@ -2,7 +2,9 @@
 
 ### Feature of Online Shopping Store 
 #### `Story 1: List out one product with title, description and price`
-![Product](readme/productdesc.png?raw=true "Title")
+#### [In-Progress]`Story 2: Add image and Add to Cart Button to existing Product and list out multiple Product`
+![Product](readme/multipleProducts.png?raw=true "Title")
+
 
 >Learnings
  
