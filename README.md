@@ -2,6 +2,7 @@
 
 ### Features of Online Shopping Store 
 :white_check_mark: `Story 1: List out one product with title, description and price`
+
 :white_check_mark:  `Story 2: Add image and Add to Cart Button to existing Product and list out multiple Product`
 
 
