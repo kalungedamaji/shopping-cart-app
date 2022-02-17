@@ -4,9 +4,7 @@
 :white_check_mark: `Story 1: List out one product with title, description and price`
 
 :white_check_mark:  `Story 2: Add image and Add to Cart Button to existing Product and list out multiple Product`
-- [ ] `Story 3: User Story 3: As customer want to have ability to add product shopping cart and view it.
-t`
-![Product](readme/AddToShoppingCart.png?raw=true "Title")
+
 
 >Learnings
  
