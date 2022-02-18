@@ -7,6 +7,7 @@
 
 - [ ] `Story 3: User Story 3: As customer want to have ability to add product shopping cart and view it.
 t`
+
 They are working in two team
 Team1:
 Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
