@@ -1,8 +1,8 @@
 import React from 'react'
-import Product, { ProductDetails, ProductProps } from '../product/Product'
+import Product, { ProductDetail, ProductProps } from '../product/Product'
 
 interface CartProps {
-    product: ProductDetails
+    product: ProductDetail
 }
 
 const ShopCart:React.FC<CartProps> = ({product}) => {

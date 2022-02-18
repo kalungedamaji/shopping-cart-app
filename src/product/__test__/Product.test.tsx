@@ -1,11 +1,11 @@
 import {render, screen} from "@testing-library/react";
 import React from "react";
-import Product, {ProductDetails} from "../Product";
+import Product, {ProductDetail} from "../Product";
 describe("should display product details",()=> {
 
 
     it('should display product name', () => {
-        const product:ProductDetails ={
+        const product:ProductDetail ={
             name:"Mens Casual Premium Slim Fit T-Shirts",
             description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
             price:"$22.3",
@@ -17,7 +17,7 @@ describe("should display product details",()=> {
     });
 
     it('should display product description', () => {
-        const product:ProductDetails ={
+        const product:ProductDetail ={
             name:"Mens Casual Premium Slim Fit T-Shirts",
             description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
             price:"$22.3",
@@ -29,7 +29,7 @@ describe("should display product details",()=> {
     });
 
     it('should display product price', () => {
-        const product:ProductDetails ={
+        const product:ProductDetail ={
             name:"Mens Casual Premium Slim Fit T-Shirts",
             description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
             price:"$22.3",

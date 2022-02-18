@@ -1,5 +1,5 @@
 import {render , screen} from '@testing-library/react'
-import { ProductDetails } from '../../product/Product'
+import { ProductDetail } from '../../product/Product'
 import Cart from '../Cart'
 
 describe("should render product in Cart of Shopping Cart Application", () => {
@@ -7,7 +7,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
 
     it("should render product image in Cart", () => {
 
-        const inputProduct: ProductDetails = {
+        const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
         name : "Laptop bag",
         description : "Your perfect pack for everday",
@@ -22,7 +22,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
 
     it("should render product name in Cart", () => {
 
-        const inputProduct: ProductDetails = {
+        const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
         name : "Laptop bag",
         description : "Your perfect pack for everday",
@@ -37,7 +37,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
 
     it("should render product description in Cart", () => {
 
-        const inputProduct: ProductDetails = {
+        const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
         name : "Laptop bag",
         description : "Your perfect pack for everday",
@@ -52,7 +52,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
 
     it("should render product price in Cart", () => {
 
-        const inputProduct: ProductDetails = {
+        const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
         name : "Laptop bag",
         description : "Your perfect pack for everday",

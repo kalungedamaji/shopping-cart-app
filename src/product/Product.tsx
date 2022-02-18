@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 
-export interface ProductDetails{
+export interface ProductDetail{
     image: string,
     name : string,
     description : string,
     price : string
 }
 export interface ProductProps{
-    productDetail: ProductDetails
+    productDetail: ProductDetail
 }
 const Product:React.FC<ProductProps> = ({productDetail})=> {
 
