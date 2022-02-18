@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 export interface ProductDetails{
     image: string,
@@ -6,7 +6,7 @@ export interface ProductDetails{
     description : string,
     price : string
 }
-interface ProductProps{
+export interface ProductProps{
     productDetail: ProductDetails
 }
 const Product:React.FC<ProductProps> = ({productDetail})=> {
@@ -18,11 +18,12 @@ const Product:React.FC<ProductProps> = ({productDetail})=> {
                 <h3>{productDetail.name}</h3>
                 <p>{productDetail.description}</p>
                 <h4>{productDetail.price}</h4>
-                <button>Add to Cart</button>
+                <button >Add to Cart</button>
             </div>
         </li>
-    );
+    ); 
 
 }
+
 export default Product;
 

@@ -3,12 +3,14 @@ import { render,screen } from '@testing-library/react';
 import ProductList from '../ProductList';
 import {ProductDetails} from "../Product";
 
-test('renders if two products are added', () => {
+it('should renders if two products are added', () => {
+
     const inputProduct1:ProductDetails = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
          name : "Laptop bag",
         description : "Your perfect pack for everday",
         price : "INR 4000"}
+        
     const inputProduct2:ProductDetails= {
         image :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU " ,
         name : "Mens Casual T-shirt",
