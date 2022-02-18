@@ -10,3 +10,11 @@ test('renders title of the page', () => {
 
   expect(shoppingCartHeaderElement).toBeInTheDocument();
 });
+test('renders Shopping cart navigation button', () => {
+  const inputAppName="Manyvar Shop";
+  render(<App appName={inputAppName}/>);
+
+  const shoppingCartHeaderElement = screen.getByRole("heading",{name:inputAppName})
+
+  expect(shoppingCartHeaderElement).toBeInTheDocument();
+});

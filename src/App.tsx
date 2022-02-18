@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductList from './product/ProductList';
+import CartButton from "./cart/CartButton";
 
 interface AppProps{
     appName:string
@@ -14,7 +15,9 @@ const  App:React.FC<AppProps> = ({appName})=> {
     return (
         <div>
             <h1>{appName}</h1>
+            <CartButton/>
             <ProductList products={productCollection}/>
+
         </div>
     );
 }
