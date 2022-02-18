@@ -8,7 +8,7 @@ describe("should display product details",()=> {
         const product:ProductDetail ={
             name:"Mens Casual Premium Slim Fit T-Shirts",
             description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
-            price:"$22.3",
+            price: 22.3,
             image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
         }
         render(<Product productDetail={product}/>);
@@ -20,7 +20,7 @@ describe("should display product details",()=> {
         const product:ProductDetail ={
             name:"Mens Casual Premium Slim Fit T-Shirts",
             description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
-            price:"$22.3",
+            price: 22.3,
             image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
         }
         render(<Product productDetail={product}/>);
@@ -32,11 +32,11 @@ describe("should display product details",()=> {
         const product:ProductDetail ={
             name:"Mens Casual Premium Slim Fit T-Shirts",
             description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
-            price:"$22.3",
+            price: 22.3,
             image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
         }
         render(<Product productDetail={product}/>);
-        const priceElement = screen.getByRole('heading', {name: "$22.3"});
+        const priceElement = screen.getByRole('heading', {name: "INR 22.3"});
         expect(priceElement).toBeInTheDocument();
     });
 });
