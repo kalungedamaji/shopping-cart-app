@@ -1,27 +1,42 @@
-import React from 'react';
-import { render,screen } from '@testing-library/react';
-import Product from '../Product';
+import {render, screen} from "@testing-library/react";
+import React from "react";
+import Product, {ProductDetails} from "../Product";
+describe("should display product details",()=> {
 
-test('renders Product 1 details', () => {
-    const inputProduct= {image: " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
-        name : "Laptop bag",description : "Your perfect pack for everday", price : "INR 4000"}
-    render(<Product productDetails = {inputProduct}/>);
-    const name = screen.getByRole("heading" , {name : inputProduct.name});
-    const description = screen.getByText(inputProduct.description);
-    const price = screen.getByRole("heading" , {name : inputProduct.price});
 
-    expect(name).toBeInTheDocument();
-    expect(description).toBeInTheDocument();
-    expect(price).toBeInTheDocument();
+    it('should display product name', () => {
+        const product:ProductDetails ={
+            name:"Mens Casual Premium Slim Fit T-Shirts",
+            description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
+            price:"$22.3",
+            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
+        }
+        render(<Product productDetail={product}/>);
+        const nameElement = screen.getByRole('heading', {name: "Mens Casual Premium Slim Fit T-Shirts"});
+        expect(nameElement).toBeInTheDocument();
+    });
+
+    it('should display product description', () => {
+        const product:ProductDetails ={
+            name:"Mens Casual Premium Slim Fit T-Shirts",
+            description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
+            price:"$22.3",
+            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
+        }
+        render(<Product productDetail={product}/>);
+        const descriptionElement = screen.getByText("Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.");
+        expect(descriptionElement).toBeInTheDocument();
+    });
+
+    it('should display product price', () => {
+        const product:ProductDetails ={
+            name:"Mens Casual Premium Slim Fit T-Shirts",
+            description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
+            price:"$22.3",
+            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
+        }
+        render(<Product productDetail={product}/>);
+        const priceElement = screen.getByRole('heading', {name: "$22.3"});
+        expect(priceElement).toBeInTheDocument();
+    });
 });
-
-test("should render add to cart button" , () =>{
-    const inputProduct1 = {image: " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
-        name : "Laptop bag",description : "Your perfect pack for everday", price : "INR 4000"}
-    render(<Product productDetails={inputProduct1} />)
-
-    const addToCartButton = screen.getByRole("button" , {name: "Add to Cart"})
-    expect(addToCartButton).toBeInTheDocument();
-});
-
-

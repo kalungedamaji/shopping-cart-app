@@ -7,17 +7,17 @@ export interface ProductDetails{
     price : string
 }
 interface ProductProps{
-    productDetails: ProductDetails
+    productDetail: ProductDetails
 }
-const Product:React.FC<ProductProps> = ({productDetails})=> {
+const Product:React.FC<ProductProps> = ({productDetail})=> {
 
     return (
         <li>
             <div>
-                <img src ={productDetails.image} alt={productDetails.name}></img>
-                <h3>{productDetails.name}</h3>
-                <p>{productDetails.description}</p>
-                <h4>{productDetails.price}</h4>
+                <img src ={productDetail.image} alt={productDetail.name}></img>
+                <h3>{productDetail.name}</h3>
+                <p>{productDetail.description}</p>
+                <h4>{productDetail.price}</h4>
                 <button>Add to Cart</button>
             </div>
         </li>

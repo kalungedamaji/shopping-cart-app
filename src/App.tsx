@@ -14,6 +14,7 @@ const  App:React.FC<AppProps> = ({appName})=> {
     return (
         <div>
             <h1>{appName}</h1>
+            <ProductList products={productCollection}/>
         </div>
     );
 }
