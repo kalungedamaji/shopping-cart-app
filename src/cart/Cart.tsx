@@ -16,7 +16,7 @@ const ShopCart:React.FC<CartProps> = ({product, quantity}) => {
             <img src ={product.image} alt={product.name}></img>
             <p>Price : {product.price}</p>
             <button>-</button>
-            <p>{quantity}</p>
+            <p>Quantity : {quantity}</p>
             <button>+</button>
             <p>Total : {totalPrice}</p>
         </div>

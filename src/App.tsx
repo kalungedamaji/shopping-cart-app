@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductList from './product/ProductList';
+import Cart from "./cart/Cart";
 
 interface AppProps{
     appName:string
