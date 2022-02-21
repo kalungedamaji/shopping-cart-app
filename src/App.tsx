@@ -17,6 +17,7 @@ const  App:React.FC<AppProps> = ({appName})=> {
     return (
         <div>
             <h1>{appName}</h1>
+            <button>View Cart</button>
             <ProductList products={productCollection}/>
         </div>
     );
