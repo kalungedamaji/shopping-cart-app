@@ -52,4 +52,36 @@ describe("should render product in Cart of Shopping Cart Application", () => {
         expect(cartProductPriceBodyElement).toBeInTheDocument();
         
     })
+
+    it("should render decrement button in Cart", () => {
+
+        const inputProduct: ProductDetail = {
+        image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
+        name : "Laptop bag",
+        description : "Your perfect pack for everday",
+        price : 4000} 
+        const inputQuantity = 1;
+
+        render(<Cart product={inputProduct} quantity={inputQuantity}/>)
+
+        const cartProductNameHeaderElement = screen.getByRole("button", {name:"-"})
+        expect(cartProductNameHeaderElement).toBeInTheDocument();
+        
+    })
+
+    it("should render increment button in Cart", () => {
+
+        const inputProduct: ProductDetail = {
+        image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
+        name : "Laptop bag",
+        description : "Your perfect pack for everday",
+        price : 4000} 
+        const inputQuantity = 1;
+
+        render(<Cart product={inputProduct} quantity={inputQuantity}/>)
+
+        const cartProductNameHeaderElement = screen.getByRole("button", {name:"+"})
+        expect(cartProductNameHeaderElement).toBeInTheDocument();
+        
+    })
 })
