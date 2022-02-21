@@ -1,5 +1,3 @@
-import React, {useState} from 'react';
-
 export interface ProductDetail{
     image: string,
     name : string,
