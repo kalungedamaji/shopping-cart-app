@@ -1,13 +1,13 @@
 import React from "react";
-import Product, { ProductDetails } from './Product';
+import Product, { ProductDetail } from './Product';
 
 interface ProductListProps{
-    products: ProductDetails[]
+    products: ProductDetail[]
 }
 const ProductList:React.FC<ProductListProps> = ({products})=> {
     return (<div>
-            {products.map((product: ProductDetails) => (
-                <Product productDetails={product} key={product.name}/>
+            {products.map((product: ProductDetail) => (
+                <Product productDetail={product} key={product.name}/>
             ))}
         </div>
     );

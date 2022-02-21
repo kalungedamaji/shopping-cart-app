@@ -4,19 +4,14 @@
 :white_check_mark: `Story 1: List out one product with title, description and price`
 
 :white_check_mark:  `Story 2: Add image and Add to Cart Button to existing Product and list out multiple Product`
-
 - [ ] `Story 3: User Story 3: As customer want to have ability to add product shopping cart and view it.
 t`
 
-They are working in two team
-
-Team1:
 Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
 
-Team2:
-Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
-
 ![Product](readme/AddToShoppingCart.png?raw=true "Title")
+
+
 >Learnings
  
             
