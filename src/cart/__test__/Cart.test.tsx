@@ -64,8 +64,8 @@ describe("should render product in Cart of Shopping Cart Application", () => {
 
         render(<Cart product={inputProduct} quantity={inputQuantity}/>)
 
-        const cartProductNameHeaderElement = screen.getByRole("button", {name:"-"})
-        expect(cartProductNameHeaderElement).toBeInTheDocument();
+        const cartProductBodyDecrementButtonElement = screen.getByRole("button", {name:"-"})
+        expect(cartProductBodyDecrementButtonElement).toBeInTheDocument();
         
     })
 
@@ -80,8 +80,8 @@ describe("should render product in Cart of Shopping Cart Application", () => {
 
         render(<Cart product={inputProduct} quantity={inputQuantity}/>)
 
-        const cartProductNameHeaderElement = screen.getByRole("button", {name:"+"})
-        expect(cartProductNameHeaderElement).toBeInTheDocument();
+        const cartProductBodyIncrementButtonElement = screen.getByRole("button", {name:"+"})
+        expect(cartProductBodyIncrementButtonElement).toBeInTheDocument();
         
     })
 
