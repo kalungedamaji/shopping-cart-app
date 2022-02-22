@@ -1,27 +1,27 @@
-import React from 'react'
-import Product, { ProductDetail, ProductProps } from '../product/Product'
+import React from "react";
+import { ProductDetail } from "../product/Product";
 
-interface CartProps {
-    quantity: number,
-    product: ProductDetail
+export interface CartProps {
+  productDetail: ProductDetail;
 }
 
-const ShopCart:React.FC<CartProps> = ({product, quantity}) => {
+const Cart: React.FC<CartProps> = ({ productDetail }) => {
+  console.log("In cart component: ", productDetail);
+  console.log("In cart component: ", productDetail.name);
+  const quantity = 1;
 
-    const totalPrice = +(product.price) * (quantity);
-    return (
-        <div>
-            <h1>Your Shopping Cart</h1>
-            <h3>{product.name}</h3>
-            <img src ={product.image} alt={product.name}></img>
-            <p>Price : {product.price}</p>
-            <button>-</button>
-            <p>Quantity : {quantity}</p>
-            <button>+</button>
-            <p>Total : {totalPrice}</p>
-        </div>
-    )
+  return (
+    <li>
+      <div>
+        <img src={productDetail.image} alt={productDetail.name} />
+        <p>Price : {productDetail.price}</p>
+        <button>-</button>
+        <p>Quantity : {quantity}</p>
+        <button>+</button>
+        <p>Total : {+productDetail.price * quantity}</p>
+      </div>
+    </li>
+  );
+};
 
-}
-
-export default ShopCart;
+export default Cart;

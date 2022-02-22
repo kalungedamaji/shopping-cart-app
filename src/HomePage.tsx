@@ -1,15 +1,17 @@
 import React from 'react';
 import ProductList from './product/ProductList';
-import Cart from "./cart/Cart";
 import { useNavigate } from 'react-router-dom';
-//import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import { ProductDetail } from './product/Product';
+
 
 interface HomePageProps{
     homePageName:string
+    cartList:ProductDetail[]
 }
 
-const  HomePage:React.FC<HomePageProps> = ({homePageName})=> {
+const  HomePage:React.FC<HomePageProps> = ({homePageName, cartList})=> {
 
+    console.log("In homepage: ", cartList);
 
     const inputProduct1= { image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgn8CbKIbjF4VRkw3CbngfisZKCbfHtpVFEw&usqp=CAU "
         , name : "Laptop bag",description : "Your perfect pack for everday use and walks in the forest", price : 4000 }
@@ -20,7 +22,7 @@ const  HomePage:React.FC<HomePageProps> = ({homePageName})=> {
 
    let navigate = useNavigate(); 
 
-    const routeChange = () =>{ 
+    const routeChange = () =>{       
       let path = `/cart`; 
       navigate(path);
     } 
@@ -29,7 +31,7 @@ const  HomePage:React.FC<HomePageProps> = ({homePageName})=> {
         <div>        
             <h1>{homePageName}</h1>
             <button onClick={routeChange} > View Cart </button>
-            <ProductList products={productCollection}/>  
+            <ProductList products={productCollection} cartList={cartList}/>  
         </div>
     );
 

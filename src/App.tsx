@@ -1,18 +1,18 @@
 import React from 'react';
 import HomePage from './HomePage'
 import {Routes, Route} from 'react-router-dom'
-import Cart from './cart/Cart';
+import CartList from './cart/CartList';
+import { ProductDetail } from './product/Product';
 
-const  App:React.FC = () => {
+const cartList:ProductDetail[] = [];
 
-    const inputProduct= { image : " "
-        , name : "",description : "", price : 0 }
-
+const  App:React.FC = () => {        
+    
     return (
         <div>
             <Routes> 
-            <Route path='/' element = {<HomePage homePageName="TEAM 1 MEGA MART" />}> </Route> 
-            <Route path='/cart' element = {<Cart quantity={0} product={inputProduct} />} ></Route>
+            <Route path='/' element = {<HomePage homePageName="TEAM 1 MEGA MART" cartList={cartList}/>}> </Route> 
+            <Route path='/cart' element = {<CartList products={cartList} />} ></Route>
             </Routes> 
         </div>
     )

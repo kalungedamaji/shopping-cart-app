@@ -1,3 +1,5 @@
+import React from 'react'
+
 export interface ProductDetail{
     image: string,
     name : string,
@@ -6,8 +8,16 @@ export interface ProductDetail{
 }
 export interface ProductProps{
     productDetail: ProductDetail
+    cartList:ProductDetail[]
 }
-const Product:React.FC<ProductProps> = ({productDetail})=> {
+
+
+const Product:React.FC<ProductProps> = ({productDetail , cartList})=> {
+    console.log("In Product Component:", cartList);
+
+ function itemAddHandler() {
+    cartList.push(productDetail)
+ }
 
     return (
         <li>
@@ -16,7 +26,7 @@ const Product:React.FC<ProductProps> = ({productDetail})=> {
                 <h3>{productDetail.name}</h3>
                 <p>{productDetail.description}</p>
                 <h4>INR {productDetail.price}</h4>
-                <button >Add to Cart</button>
+                <button onClick={itemAddHandler} >Add to Cart</button>
             </div>
         </li>
     ); 
