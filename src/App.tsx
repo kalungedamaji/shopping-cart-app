@@ -2,7 +2,7 @@ import React from 'react';
 import MainNavigation from "./layout/MainNavigation";
 import CartPage from "./cart/CartPage";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import StorePage from "./layout/Store";
+import StorePage from "./store/StorePage";
 
 interface AppProps{
     appName:string

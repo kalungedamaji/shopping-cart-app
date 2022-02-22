@@ -6,9 +6,11 @@ interface ProductListProps{
 }
 const ProductList:React.FC<ProductListProps> = ({products})=> {
     return (<div>
+            <ul>
             {products.map((product: ProductDetails) => (
                 <Product productDetail={product} key={product.name}/>
             ))}
+            </ul>
         </div>
     );
 }

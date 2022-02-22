@@ -14,20 +14,3 @@ test('renders title of the page', () => {
   expect(shoppingCartHeaderElement).toBeInTheDocument();
 });
 
-test('renders Cart navigator', () => {
-  const inputAppName="Manyvar Shop";
-  render(<BrowserRouter>
-    <App appName={inputAppName}/>
-  </BrowserRouter>);
-
-  expect(screen.getByRole('link' , { name: 'Cart button' })).toHaveAttribute('href', '/CartPage');
-});
-
-test('renders Store navigator', () => {
-  const inputAppName="Manyvar Shop";
-  render(<BrowserRouter>
-    <App appName={inputAppName}/>
-  </BrowserRouter>);
-
-  expect(screen.getByRole('link' , { name: 'store button' })).toHaveAttribute('href', '/');
-});
