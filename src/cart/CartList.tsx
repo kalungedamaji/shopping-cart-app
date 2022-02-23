@@ -1,19 +1,18 @@
-import React from "react";
+import React , { useContext } from "react";
 import { ProductDetail } from "../product/Product";
+import CartContext from "../store/Cart-Context";
 import Cart from "./Cart";
 
-interface CartListProps {
-  products: ProductDetail[];
-}
 
-const CartList: React.FC<CartListProps> = ({ products }) => {
-  products.forEach((product) => {
-    console.log("In cartlist:", product);
-  });
+const CartList: React.FC = () => {
 
-  let content;
+  
 
-  if (products.length === 0) {
+  const cartCtx = useContext(CartContext);
+
+  console.log("In Cart List: ", {cartCtx});
+
+  if (cartCtx.cartProductList.length === 0) {
     return <p>Your Cart is Empty !!</p>;
   }
 
@@ -21,16 +20,8 @@ const CartList: React.FC<CartListProps> = ({ products }) => {
     <div>
       <h1>Your Shopping Cart</h1>
 
-      {products.map((productDetail: ProductDetail) => (
-        <Cart
-          productDetail={{
-            name: productDetail.name,
-            image: productDetail.image,
-            description: productDetail.description,
-            price: productDetail.price,
-          }}
-          key={productDetail.name}
-        />
+      {cartCtx.cartProductList.map((productDetail: ProductDetail) => (
+        <Cart productDetail={productDetail} key={productDetail.name} />
       ))}
     </div>
   );

@@ -1,4 +1,6 @@
 import React from 'react'
+import { useContext } from 'react';
+import CartContext from '../store/Cart-Context'
 
 export interface ProductDetail{
     image: string,
@@ -8,15 +10,17 @@ export interface ProductDetail{
 }
 export interface ProductProps{
     productDetail: ProductDetail
-    cartList:ProductDetail[]
 }
 
 
-const Product:React.FC<ProductProps> = ({productDetail , cartList})=> {
-    console.log("In Product Component:", cartList);
+const Product:React.FC<ProductProps> = ({productDetail})=> {
+
+    const cartCtx = useContext(CartContext);
+
+    console.log("In product: ", {productDetail})
 
  function itemAddHandler() {
-    cartList.push(productDetail)
+    cartCtx.addItemsinCart(productDetail);
  }
 
     return (
@@ -34,4 +38,5 @@ const Product:React.FC<ProductProps> = ({productDetail , cartList})=> {
 }
 
 export default Product;
+
 

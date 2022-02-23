@@ -3,14 +3,15 @@ import Product, { ProductDetail } from './Product';
 
 interface ProductListProps{
     products: ProductDetail[]
-    cartList:ProductDetail[]
 }
-const ProductList:React.FC<ProductListProps> = ({products, cartList})=> {
+const ProductList:React.FC<ProductListProps> = ({products})=> {
 
-    console.log("In ProductList", cartList);
+    console.log("In product List: ", {products});
+
+
     return (<div>
             {products.map((product: ProductDetail) => (
-                <Product productDetail={product} key={product.name} cartList={cartList}/>
+                <Product productDetail={product} key={product.name} />
             ))}
         </div>
     );
