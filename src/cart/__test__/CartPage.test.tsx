@@ -1,20 +1,26 @@
 import React from 'react';
-import {fireEvent, render, screen} from "@testing-library/react";
-import {BrowserRouter} from "react-router-dom";
-import App from "../../App";
+import { render, screen} from "@testing-library/react";
 import CartPage from "../CartPage";
+import {ProductDetails} from "../../product/Product";
 
-test('should renders cart page on clicking Cart buttom', () => {
-    const inputAppName="Manyvar Shop";
-    render(<BrowserRouter>
-        <App appName={inputAppName}/>
-    </BrowserRouter>);
+// test('should renders empty shopping cart on clicking shopping cart button', () => {
+//     render(<CartPage/>);
+//
+//     const noOfProducts = screen.queryByText("Price");
+//     expect(noOfProducts).not.toBeInTheDocument();
+// });
 
-    const linkButton = screen.getByText(/Cart button/);
-    fireEvent.click(linkButton)
+// test('should be able to add products in the cart list', () => {
+//     const inputProduct1:ProductDetails= {
+//         image :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU " ,
+//         name : "Mens Casual T-shirt",
+//         description : "A classic check shirt in Navy Can be worn for from office to after meeting evening get together.",
+//         price : "INR. 2200" }
+//     render(<AddProduct product = {inputProduct1} />);
+//
+//     const noOfProducts = screen.getAllByText("Price");
+//     expect(noOfProducts).toBe(1);
+// });
 
-    const cartPageContent = screen.getByText(/Cart page/)
-    expect(cartPageContent).toBeInTheDocument();
-});
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import AddProductToCart from "../cart/AddProductToCart";
 
 export interface ProductDetails{
     image: string,
@@ -11,6 +12,10 @@ interface ProductProps{
 }
 const Product:React.FC<ProductProps> = ({productDetail})=> {
 
+    function addToCartHandler() {
+        AddProductToCart(productDetail)
+    }
+
     return (
         <li>
             <div>
@@ -18,7 +23,7 @@ const Product:React.FC<ProductProps> = ({productDetail})=> {
                 <h3>{productDetail.name}</h3>
                 <p>{productDetail.description}</p>
                 <h4>{productDetail.price}</h4>
-                <button>Add to Cart</button>
+                <button onClick={addToCartHandler} aria-label={productDetail.name}>Add to Cart</button>
             </div>
         </li>
     );
