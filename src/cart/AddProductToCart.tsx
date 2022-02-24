@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import product, {ProductDetails} from "../product/Product";
-import CartContext from "./Cart-context";
 interface AddProductProps{
     product : ProductDetails
 }
