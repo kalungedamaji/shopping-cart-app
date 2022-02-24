@@ -24,7 +24,6 @@ const Product:React.FC<ProductProps> = ({productDetail})=> {
  }
 
     return (
-        <li>
             <div>
                 <img src ={productDetail.image} alt={productDetail.name}></img>
                 <h3>{productDetail.name}</h3>
@@ -32,7 +31,6 @@ const Product:React.FC<ProductProps> = ({productDetail})=> {
                 <h4>INR {productDetail.price}</h4>
                 <button onClick={itemAddHandler} >Add to Cart</button>
             </div>
-        </li>
     ); 
 
 }

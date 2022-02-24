@@ -1,7 +1,7 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom'
-import HomePage from './pages/HomePage/HomePage';
-import CartPage from './pages/CartPage/CartPage'
+import HomePage from './pages/home-page/HomePage';
+import CartPage from './pages/cart-page/CartPage'
 
 
 const  App:React.FC = () => {        

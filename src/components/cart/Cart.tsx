@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductDetail } from "../../components/Product_Inventory/Product";
+import { ProductDetail } from "../product-store/Product";
 
 export interface CartProps {
   productDetail: ProductDetail;
@@ -12,7 +12,6 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
   const quantity = 1;
 
   return (
-    <li>
       <div>
         <img src={productDetail.image} alt={productDetail.name} />
         <p>Price : {productDetail.price}</p>
@@ -21,7 +20,6 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
         <button>+</button>
         <p>Total : {+productDetail.price * quantity}</p>
       </div>
-    </li>
   );
 };
 

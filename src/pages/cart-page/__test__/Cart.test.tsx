@@ -1,6 +1,6 @@
 import {render , screen} from '@testing-library/react'
 import { ProductProps, ProductDetail } from '../../../product-Inventory/Product'
-import Cart from '../Cart'
+import Cart from '../../../components/cart/Cart'
 
 
 it("should render empty cart when no product is added", () => {

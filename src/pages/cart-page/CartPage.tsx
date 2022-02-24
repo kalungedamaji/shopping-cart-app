@@ -1,5 +1,5 @@
 import React from 'react'
-import CartList from './CartList'
+import CartList from '../../components/cart/CartList'
 
 const HomePage:React.FC = (() => {
     return (

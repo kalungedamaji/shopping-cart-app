@@ -1,6 +1,6 @@
 import React from 'react';
 import { render,screen } from '@testing-library/react';
-import ProductList from '../ProductList';
+import ProductStore from '../ProductStore';
 import {ProductDetail} from "../Product";
 
 it('should renders if two products are added', () => {
@@ -18,7 +18,7 @@ it('should renders if two products are added', () => {
         price : 2200 }
 
     const productCollection:ProductDetail[] = [inputProduct1 , inputProduct2]
-    render(<ProductList products={productCollection} />);
+    render(<ProductStore homePageProducts={productCollection} />);
 
     const noOfProuducts = screen.getAllByText("Add to Cart");
     expect(noOfProuducts.length).toBe(2);

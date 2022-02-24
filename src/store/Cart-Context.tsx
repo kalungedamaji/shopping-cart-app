@@ -1,5 +1,5 @@
 import { createContext} from 'react'
-import { ProductDetail } from '../components/Product_Inventory/Product'
+import { ProductDetail } from '../components/product-store/Product'
 
 
 interface CartContextProps {

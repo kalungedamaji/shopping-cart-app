@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
-import ProductList from '../../components/Product_Inventory/ProductList';
-
-
+import Header from '../../components/main-header/Header';
+import ProductStore from '../../components/product-store/ProductStore';
 
 
 
@@ -19,7 +17,7 @@ const  HomePage:React.FC = ()=> {
     return (
         <div>
             <Header homePageName="Team 1 Mega Mart"/>      
-            <ProductList homePageProducts={productCollection}/>  
+            <ProductStore homePageProducts={productCollection}/>  
         </div>
     );
 
