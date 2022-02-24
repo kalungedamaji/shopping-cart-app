@@ -11,7 +11,7 @@ const CartList: React.FC = () => {
   console.log("In Cart List: ", {cartCtx});
 
   if (cartCtx.cartProductList.length === 0) {
-    return <p>Your Cart is Empty !!</p>;
+    return <h1>Your Cart is Empty !!</h1>;
   }
 
   return (

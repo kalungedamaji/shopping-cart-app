@@ -1,6 +1,7 @@
 import {render, screen} from "@testing-library/react";
-import React from "react";
 import Product, {ProductDetail} from "../Product";
+import CartPage from "../../../pages/cart-page/CartPage"
+
 describe("should display product details",()=> {
 
 
@@ -40,3 +41,14 @@ describe("should display product details",()=> {
         expect(priceElement).toBeInTheDocument();
     });
 });
+
+describe("add to cart button should render product in cart ", () => {
+
+    it.only('should render empty cart when no product is added to cart', () => {
+
+        render(<CartPage />);
+        const cartHeaderElement = screen.getByRole('heading', {name: "Your Cart is Empty"});
+        expect(cartHeaderElement).toBeInTheDocument();
+    });
+});
+
