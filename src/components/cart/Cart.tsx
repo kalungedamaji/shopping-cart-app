@@ -7,7 +7,7 @@ export interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ productDetail }) => {
 
-  console.log("In Cart: ", {productDetail})
+  console.log("In cart: ", {productDetail})
 
   const quantity = 1;
 

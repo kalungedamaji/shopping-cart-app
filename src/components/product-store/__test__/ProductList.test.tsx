@@ -20,6 +20,6 @@ it('should renders if two products are added', () => {
     const productCollection:ProductDetail[] = [inputProduct1 , inputProduct2]
     render(<ProductStore homePageProducts={productCollection} />);
 
-    const noOfProuducts = screen.getAllByText("Add to Cart");
+    const noOfProuducts = screen.getAllByText("Add to cart");
     expect(noOfProuducts.length).toBe(2);
 });

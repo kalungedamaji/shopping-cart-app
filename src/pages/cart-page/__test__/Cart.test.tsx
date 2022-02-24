@@ -20,17 +20,17 @@ it("should render empty cart when no product is added", () => {
 
     render(<Cart product={productProps}/>)
 
-    const cartProductBodyElement = screen.getByText("Your Cart is Empty !!")
+    const cartProductBodyElement = screen.getByText("Your cart is Empty !!")
     expect(cartProductBodyElement).toBeInTheDocument();
     
 })
 
 
 
-describe("should render product in Cart of Shopping Cart Application", () => {
+describe("should render product in cart of Shopping cart Application", () => {
     
 
-    it("should render product image in Cart", () => {
+    it("should render product image in cart", () => {
 
         const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
@@ -50,7 +50,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
         
     })
 
-    it("should render product name in Cart", () => {
+    it("should render product name in cart", () => {
 
         const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
@@ -70,7 +70,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
         
     })
 
-    it("should render product price in Cart", () => {
+    it("should render product price in cart", () => {
 
         const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
@@ -90,7 +90,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
         
     })
 
-    it("should render decrement button in Cart", () => {
+    it("should render decrement button in cart", () => {
 
         const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
@@ -110,7 +110,7 @@ describe("should render product in Cart of Shopping Cart Application", () => {
         
     })
 
-    it("should render increment button in Cart", () => {
+    it("should render increment button in cart", () => {
 
         const inputProduct: ProductDetail = {
         image : " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
