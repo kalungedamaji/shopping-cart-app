@@ -1,4 +1,4 @@
-import ProductList from "../product/ProductList";
+import ProductList from "../components/product/ProductList";
 import React from "react";
 
 function StorePage(){

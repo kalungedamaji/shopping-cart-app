@@ -1,18 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom"
-interface AppProps{
-    appName:string
-}
-const  MainNavigation:React.FC<AppProps> = (appProps)=> {
+
+const  MainNavigation:React.FC = (appProps)=> {
    return (<div>
         <header>
-        <div><h1>{appProps.appName}</h1></div>
-
            <div>
                <nav>
-                   <Link to='/CartPage'>Cart button</Link>
+                   <Link to='/CartPage'>Cart</Link>
                <br/>
-               <Link to='/'>store button</Link>
+               <Link to='/'>Store</Link>
                </nav>
            </div>
         </header>

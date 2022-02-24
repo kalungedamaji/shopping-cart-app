@@ -1,5 +1,5 @@
-import React from 'react';
-import AddProductToCart from "../cart/AddProductToCart";
+import React, {useContext} from 'react';
+import CartContext from "../../context/CartContext";
 
 export interface ProductDetails{
     image: string,
@@ -11,9 +11,11 @@ interface ProductProps{
     productDetail: ProductDetails
 }
 const Product:React.FC<ProductProps> = ({productDetail})=> {
-
+    const CartCtx = useContext(CartContext);
     function addToCartHandler() {
-        AddProductToCart(productDetail)
+
+        CartCtx.addToCart(productDetail);
+        // AddProductToCart(productDetail)
     }
 
     return (
