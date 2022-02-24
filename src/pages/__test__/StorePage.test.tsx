@@ -9,7 +9,7 @@ test('should render product list and return number of products in it on clicking
     render(<BrowserRouter>
         <App appName={inputAppName}/>
     </BrowserRouter>);
-    const linkButton = screen.getByText(/store button/);
+    const linkButton = screen.getByText(/Store/);
     fireEvent.click(linkButton)
 
     const cartPageContent = screen.getByRole('list')
