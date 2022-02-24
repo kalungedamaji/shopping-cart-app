@@ -1,6 +1,11 @@
-import {render, screen} from "@testing-library/react";
+import {fireEvent, render, screen} from "@testing-library/react";
 import Product, {ProductDetail} from "../Product";
 import CartPage from "../../../pages/cart-page/CartPage"
+import { BrowserRouter } from "react-router-dom";
+import HomePage from "../../../pages/home-page/HomePage";
+import Header from "../../main-header/Header";
+import App from "../../../App";
+import { notDeepEqual } from "assert";
 
 describe("should display product details",()=> {
 
@@ -44,11 +49,38 @@ describe("should display product details",()=> {
 
 describe("add to cart button should render product in cart ", () => {
 
-    it.only('should render empty cart when no product is added to cart', () => {
+    it.only('should render add to cart button in home page', () => {
 
-        render(<CartPage />);
-        const cartHeaderElement = screen.getByRole('heading', {name: "Your Cart is Empty"});
-        expect(cartHeaderElement).toBeInTheDocument();
+
+        render(
+            <BrowserRouter>
+            <App />
+            </BrowserRouter>);
+       
+        const addToCartButtonElement = screen.getAllByRole("button", {name: "Add to Cart"});
+        
+        expect(addToCartButtonElement[0]).toBeInTheDocument();
     });
+
+    it.only('should render a product in cart page when add to cart button is clicked', () => {
+
+
+        render(
+            <BrowserRouter>
+            <App />
+            </BrowserRouter>);
+       
+        const addToCartButtonElement = screen.getAllByRole("button", {name: "Add to Cart"});
+        
+        fireEvent.click(addToCartButtonElement[0]); 
+
+        const viewCartButtonElement = screen.getByRole("button", {name: "View Cart"});
+        fireEvent.click(viewCartButtonElement); 
+        const cartPageBodyElement = screen.getByAltText("Laptop bag")
+
+        expect(cartPageBodyElement).toBeInTheDocument();
+    });
+
+    
 });
 

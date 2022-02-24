@@ -11,12 +11,12 @@ const CartList: React.FC = () => {
   console.log("In cart List: ", {cartCtx});
 
   if (cartCtx.cartProductList.length === 0) {
-    return <h1>Your Cart is Empty !!</h1>;
+    return <h3>Your Cart is Empty !!</h3>;
   }
 
   return (
     <div>
-      <h1>Your Shopping Cart</h1>
+      
 
       {cartCtx.cartProductList.map((productDetail: ProductDetail) => (
         <Cart productDetail={productDetail} key={productDetail.name} />
