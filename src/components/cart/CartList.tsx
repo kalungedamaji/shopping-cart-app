@@ -8,7 +8,7 @@ const CartList: React.FC = () => {
 
   const cartCtx = useContext(CartContext);
 
-  console.log("In Cart List: ", {cartCtx});
+  console.log("In cart List: ", {cartCtx});
 
   if (cartCtx.cartProductList.length === 0) {
     return <h1>Your Cart is Empty !!</h1>;
