@@ -5,6 +5,6 @@ import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
     <BrowserRouter>
-        <App appName="Flipkart for Technogise"/>
+        <App appName="Flipcart for Technogise"/>
     </BrowserRouter>,
     document.getElementById("root"));
