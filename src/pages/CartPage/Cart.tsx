@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductDetail } from "../product/Product";
+import { ProductDetail } from "../../components/Product_Inventory/Product";
 
 export interface CartProps {
   productDetail: ProductDetail;

@@ -1,12 +1,10 @@
 import React , { useContext } from "react";
-import { ProductDetail } from "../product/Product";
-import CartContext from "../store/Cart-Context";
+import { ProductDetail } from "../../components/Product_Inventory/Product";
+import CartContext from "../../store/Cart-Context";
 import Cart from "./Cart";
 
 
 const CartList: React.FC = () => {
-
-  
 
   const cartCtx = useContext(CartContext);
 

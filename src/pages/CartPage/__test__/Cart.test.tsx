@@ -1,5 +1,5 @@
 import {render , screen} from '@testing-library/react'
-import { ProductProps, ProductDetail } from '../../product/Product'
+import { ProductProps, ProductDetail } from '../../../product-Inventory/Product'
 import Cart from '../Cart'
 
 

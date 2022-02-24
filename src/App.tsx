@@ -1,7 +1,7 @@
 import React from 'react';
-import HomePage from './HomePage'
 import {Routes, Route} from 'react-router-dom'
-import CartList from './cart/CartList';
+import HomePage from './pages/HomePage/HomePage';
+import CartPage from './pages/CartPage/CartPage'
 
 
 const  App:React.FC = () => {        
@@ -9,8 +9,8 @@ const  App:React.FC = () => {
     return (
         <div>
             <Routes> 
-            <Route path='/' element = {<HomePage homePageName="TEAM 1 MEGA MART" />}> </Route> 
-            <Route path='/cart' element = {<CartList />} ></Route>
+            <Route path='/' element = {<HomePage />}> </Route> 
+            <Route path='/cart' element = {<CartPage />} ></Route>
             </Routes> 
         </div>
     )

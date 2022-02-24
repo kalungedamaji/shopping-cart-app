@@ -2,15 +2,15 @@ import React from "react";
 import Product, { ProductDetail } from './Product';
 
 interface ProductListProps{
-    products: ProductDetail[]
+    homePageProducts: ProductDetail[]
 }
-const ProductList:React.FC<ProductListProps> = ({products})=> {
+const ProductList:React.FC<ProductListProps> = ({homePageProducts})=> {
 
-    console.log("In product List: ", {products});
+    console.log("In product List: ", {homePageProducts});
 
 
     return (<div>
-            {products.map((product: ProductDetail) => (
+            {homePageProducts.map((product: ProductDetail) => (
                 <Product productDetail={product} key={product.name} />
             ))}
         </div>

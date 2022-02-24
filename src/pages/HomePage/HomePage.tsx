@@ -1,16 +1,12 @@
 import React from 'react';
-import ProductList from './product/ProductList';
-import { useNavigate } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import ProductList from '../../components/Product_Inventory/ProductList';
 
 
-interface HomePageProps{
-    homePageName:string
-}
 
-const  HomePage:React.FC<HomePageProps> = ({homePageName})=> {
 
-    console.log("In HomePage: ", {homePageName})
 
+const  HomePage:React.FC = ()=> {
 
     const inputProduct1= { image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgn8CbKIbjF4VRkw3CbngfisZKCbfHtpVFEw&usqp=CAU "
         , name : "Laptop bag",description : "Your perfect pack for everday use and walks in the forest", price : 4000 }
@@ -19,18 +15,11 @@ const  HomePage:React.FC<HomePageProps> = ({homePageName})=> {
     const productCollection = [inputProduct1 , inputProduct2]
 
 
-   let navigate = useNavigate(); 
-
-    const routeChange = () =>{       
-      let path = `/cart`; 
-      navigate(path);
-    } 
 
     return (
-        <div>      
-            <h1>{homePageName}</h1>
-            <button onClick={routeChange} > View Cart </button>
-            <ProductList products={productCollection}/>  
+        <div>
+            <Header homePageName="Team 1 Mega Mart"/>      
+            <ProductList homePageProducts={productCollection}/>  
         </div>
     );
 

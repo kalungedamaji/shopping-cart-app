@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from './HomePage';
+import HomePage from '../HomePage';
 import { fireEvent, render,screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 

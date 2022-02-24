@@ -1,5 +1,5 @@
-import { createContext, useState } from 'react'
-import { ProductDetail } from '../product/Product';
+import { createContext} from 'react'
+import { ProductDetail } from '../components/Product_Inventory/Product'
 
 
 interface CartContextProps {
@@ -14,14 +14,11 @@ const CartContext = createContext<CartContextProps>({
 });
 
 export const CartContextProvider:React.FC = ((props) => {
-
-    const [inCart, addToCart] = useState<ProductDetail[]>([]);
-
+      
+ const inCart : ProductDetail[] = [];  
 
     function addItemsHandler(product : ProductDetail) {
-        addToCart((prevProduct) => {
-            return prevProduct.concat(product);
-        });
+        inCart.push(product);
     }
 
 

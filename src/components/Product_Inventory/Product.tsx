@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react';
-import CartContext from '../store/Cart-Context'
+import CartContext from '../../store/Cart-Context'
 
 export interface ProductDetail{
     image: string,
