@@ -8,16 +8,12 @@ const CartList: React.FC = () => {
 
   const cartCtx = useContext(CartContext);
 
-  console.log("In cart List: ", {cartCtx});
-
   if (cartCtx.cartProductList.length === 0) {
     return <h3>Your Cart is Empty !!</h3>;
   }
 
   return (
     <div>
-      
-
       {cartCtx.cartProductList.map((productDetail: ProductDetail) => (
         <Cart productDetail={productDetail} key={productDetail.name} />
       ))}

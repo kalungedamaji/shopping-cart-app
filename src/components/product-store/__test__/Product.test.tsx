@@ -1,11 +1,8 @@
 import {fireEvent, render, screen} from "@testing-library/react";
 import Product, {ProductDetail} from "../Product";
-import CartPage from "../../../pages/cart-page/CartPage"
 import { BrowserRouter } from "react-router-dom";
-import HomePage from "../../../pages/home-page/HomePage";
-import Header from "../../main-header/Header";
 import App from "../../../App";
-import { notDeepEqual } from "assert";
+
 
 describe("should display product details",()=> {
 

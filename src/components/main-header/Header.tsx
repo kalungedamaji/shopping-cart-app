@@ -5,9 +5,7 @@ interface HomePageProps{
     homePageName:string
 }
 
-
 const Header:React.FC<HomePageProps> = (({homePageName}) => {
-
 
     let navigate = useNavigate(); 
 
