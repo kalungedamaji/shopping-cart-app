@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ProductDetail } from "../product-store/Product";
-import CartContext from "../../store/Cart-Context";
-import Cart from "./Cart";
+import CartContext from "../../store/CartContext";
+import Cart from "./CartItem";
 
 const CartList: React.FC = () => {
   const cartCtx = useContext(CartContext);

@@ -2,7 +2,7 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom'
 import HomePage from './pages/home-page/HomePage';
 import CartPage from './pages/cart-page/CartPage'
-import { CartContextProvider } from './store/Cart-Context';
+import { CartContextProvider } from './store/CartContext';
 
 
 const  App:React.FC = () => {        

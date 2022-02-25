@@ -3,12 +3,12 @@ import { ProductDetail } from "../components/product-store/Product";
 
 interface CartContextType {
   cartProductList: ProductDetail[];
-  addItemsinCart: (product: ProductDetail) => void;
+  addItemsInCart: (product: ProductDetail) => void;
 }
 
 const CartContext = createContext<CartContextType>({
   cartProductList: [],
-  addItemsinCart: (product: ProductDetail) => {},
+  addItemsInCart: (product: ProductDetail) => {},
 });
 
 export const CartContextProvider: React.FC = (props) => {
@@ -19,7 +19,7 @@ export const CartContextProvider: React.FC = (props) => {
 
 const context: CartContextType = {
     cartProductList: inCart,
-    addItemsinCart: addItemsHandler,
+    addItemsInCart: addItemsHandler,
   };
 
   return (

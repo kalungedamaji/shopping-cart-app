@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react'
 import { ProductDetail } from '../../product-store/Product';
-import Cart from '../Cart';
+import Cart from '../CartItem';
 
 
 describe("author test cases to render product layout in cart page", () => {
