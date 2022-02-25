@@ -35,3 +35,17 @@ describe("test cases for + and - button", () => {
         expect(minusButton).toBeInTheDocument();
     })
 })
+describe("test cartItem" , ()=>{
+test('should renders product name when product is added and cart button is clicked', () => {
+
+    render(<MockApp/>);
+
+    const addCartButton = screen.getByLabelText("Laptop bag")
+    fireEvent.click(addCartButton)
+    const linkButton = screen.getByRole("link", {name: "Cart"});
+    fireEvent.click(linkButton)
+
+    const product1Name = screen.getByText("Laptop bag")
+    expect(product1Name).toBeInTheDocument();
+});
+})

@@ -36,7 +36,7 @@ describe("should display product details",()=> {
             image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
         }
         render(<Product productDetail={product}/>);
-        const priceElement = screen.getByRole("heading",{name:'22.3'});
+        const priceElement = screen.getByRole("heading",{name:'INR 22.3'});
         expect(priceElement).toBeInTheDocument();
     });
 });

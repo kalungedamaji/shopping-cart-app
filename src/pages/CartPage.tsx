@@ -4,7 +4,7 @@ import CartList from "../components/cart/CartList";
 function CartPage(){
 
     return <div>
-        Shopping cart
+        <h2>Your Shopping Cart</h2>
         <CartList />
     </div>
 }
