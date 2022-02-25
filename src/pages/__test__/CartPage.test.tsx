@@ -5,6 +5,7 @@ import App from "../../App";
 import {BrowserRouter} from "react-router-dom";
 
 describe("Cart page tests", () => {
+
     const MockApp = () => {
         const inputAppName = "Manyavar Shop";
         return (
@@ -13,9 +14,12 @@ describe("Cart page tests", () => {
             </BrowserRouter>
         )
     }
+    beforeEach(() => {
+        render(<MockApp/>);
+    });
     test('should renders product name when product is added and cart button is clicked', () => {
 
-        render(<MockApp/>);
+        //render(<MockApp/>);
 
         const addCartButton = screen.getByLabelText("Laptop bag")
         fireEvent.click(addCartButton)
@@ -27,7 +31,7 @@ describe("Cart page tests", () => {
     });
     test('should return number of products in cart', () => {
 
-        render(<MockApp/>);
+        //render(<MockApp/>);
 
         const addCartButton = screen.getByLabelText("Laptop bag")
         const addCartButton2 = screen.getByLabelText("Mens Casual T-shirt")
@@ -44,7 +48,7 @@ describe("Cart page tests", () => {
     });
     test('should renders empty shopping cart ', () => {
 
-        render(<MockApp/>);
+        //render(<MockApp/>);
         const linkButton = screen.getByRole("link", {name: "Cart"});
         fireEvent.click(linkButton)
         const cartPageContent = screen.getByRole('list')

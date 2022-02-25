@@ -1,5 +1,5 @@
 import React from "react";
-import Product, { ProductDetails } from '../product/Product';
+import Product, { ProductDetails } from './Product';
 
 interface ProductListProps{
     products: ProductDetails[]
