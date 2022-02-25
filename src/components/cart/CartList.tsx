@@ -1,11 +1,9 @@
-import React , { useContext } from "react";
+import React, { useContext } from "react";
 import { ProductDetail } from "../product-store/Product";
 import CartContext from "../../store/Cart-Context";
 import Cart from "./Cart";
 
-
 const CartList: React.FC = () => {
-
   const cartCtx = useContext(CartContext);
 
   if (cartCtx.cartProductList.length === 0) {

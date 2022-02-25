@@ -11,6 +11,7 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
 
   return (
       <div>
+        <h3>{productDetail.name}</h3>
         <img src={productDetail.image} alt={productDetail.name} />
         <p>Price : {productDetail.price}</p>
         <button>-</button>
