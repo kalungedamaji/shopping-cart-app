@@ -3,20 +3,23 @@ import {BrowserRouter} from "react-router-dom";
 import App from "../../../App";
 import React from "react";
 
-test('should renders Cart link from MainNavigation', () => {
+const MockApp=()=>{
     const inputAppName="Manyvar Shop";
-    render(<BrowserRouter>
+    return(
+    <BrowserRouter>
         <App appName={inputAppName}/>
-    </BrowserRouter>);
+    </BrowserRouter>
+    )}
+
+test('should renders Cart link from MainNavigation', () => {
+    render(<MockApp/>);
 
     expect(screen.getByRole('link' , { name: 'Cart' })).toHaveAttribute('href', '/CartPage');
 });
 
 test('should renders Store link from MainNavigation', () => {
-    const inputAppName="Manyavar Shop";
-    render(<BrowserRouter>
-        <App appName={inputAppName}/>
-    </BrowserRouter>);
+
+    render(<MockApp/>);
 
     expect(screen.getByRole('link' , { name: 'Store' })).toHaveAttribute('href', '/');
 });
