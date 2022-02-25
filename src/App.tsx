@@ -1,5 +1,5 @@
 import React from 'react';
-import MainNavigation from "./components/layout/MainNavigation";
+import MainNavigation from "./components/main_navigation/MainNavigation";
 import CartPage from "./pages/CartPage";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import StorePage from "./pages/StorePage";

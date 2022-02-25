@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import ProductList from '../ProductList';
-import {ProductDetails} from "../Product";
+import {ProductDetails} from "../../product/Product";
 
 test('renders if two products are added', () => {
     const inputProduct1: ProductDetails = {

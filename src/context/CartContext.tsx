@@ -1,5 +1,5 @@
 import React, { createContext} from "react";
-import  {ProductDetails} from "../components/product/Product";
+import  {ProductDetails} from "../components/product_relatables/product/Product";
 interface CartContextType{
     cartList : ProductDetails[],
     addToCart(product: ProductDetails) :void
