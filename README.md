@@ -15,7 +15,7 @@
 
 &nbsp;&nbsp;&nbsp; Sprint Retro Board:   https://metroretro.io/board/LBOFMVHSHJF2
 
-&nbsp;&nbsp;&nbsp; #### Team2:
+ #### Team2:
 
 &nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
 
@@ -24,7 +24,7 @@
 
 - [ ] `Story 4:    'Customer has added different products in shopping cart. The customer wants the ability to change the quantity of a given cart item and it should reflect the total cart item value and total cart amount.' 											`
 
-&nbsp;&nbsp;&nbsp; #### Design Points:     
+ #### Design Points:     
 &nbsp;&nbsp;&nbsp; 1	Total cart price should be in header
 
 &nbsp;&nbsp;&nbsp; 2	Product quantity limit - Minimum = 0 and Maximum = 10
@@ -35,11 +35,11 @@
 
 &nbsp;&nbsp;&nbsp; They are working in two team
 
-&nbsp;&nbsp;&nbsp; #### Team1:
+ #### Team1:
 
 &nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
 
-&nbsp;&nbsp;&nbsp; #### Team2:
+#### Team2:
 
 &nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
 
