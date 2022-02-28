@@ -29,8 +29,10 @@
 
 &nbsp;&nbsp;&nbsp; 2	Product quantity limit - Minimum = 0 and Maximum = 10
 
-&nbsp;&nbsp;&nbsp; 3	When customer clicks on decrement button and quantity is less than equal to zero then it should popup confirmation message : "Remove from &nbsp;&nbsp;&nbsp;&nbsp;    cart ?"								
-&nbsp;&nbsp;&nbsp;&nbsp;       3.1	If yes, delete the item							
+&nbsp;&nbsp;&nbsp; 3	When customer clicks on decrement button and quantity is less than equal to zero then it should popup confirmation message : "Remove from &nbsp;&nbsp;&nbsp;&nbsp;    cart ?"		
+
+&nbsp;&nbsp;&nbsp;&nbsp;       3.1	If yes, delete the item			
+
 &nbsp;&nbsp;&nbsp;&nbsp;      3.2	If no, set quantity to 1
 
 &nbsp;&nbsp;&nbsp; They are working in two team
