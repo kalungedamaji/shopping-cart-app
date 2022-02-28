@@ -9,38 +9,38 @@
 
 They  worked in two team
 
-#### Team1:
+&nbsp;&nbsp;&nbsp; #### Team1:
 
-Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
+&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
 
-Sprint Retro Board:   https://metroretro.io/board/LBOFMVHSHJF2
+&nbsp;&nbsp;&nbsp; Sprint Retro Board:   https://metroretro.io/board/LBOFMVHSHJF2
 
-#### Team2:
+&nbsp;&nbsp;&nbsp; #### Team2:
 
-Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
+&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
 
-Sprint Retro Board:   https://metroretro.io/board/LBTEG7ICG8K2
+&nbsp;&nbsp;&nbsp; Sprint Retro Board:   https://metroretro.io/board/LBTEG7ICG8K2
 
 - [ ] `Story 4:    'Customer has added different products in shopping cart. The customer wants the ability to change the quantity of a given cart item and it should reflect the total cart item value and total cart amount.' 											`
 
-#### Design Points:     
-1	Total cart price should be in header
+&nbsp;&nbsp;&nbsp; #### Design Points:     
+&nbsp;&nbsp;&nbsp; 1	Total cart price should be in header
 
-2	Product quantity limit - Minimum = 0 and Maximum = 10
+&nbsp;&nbsp;&nbsp; 2	Product quantity limit - Minimum = 0 and Maximum = 10
 
-3	When customer clicks on decrement button and quantity is less than equal to zero then it should popup confirmation message : "Remove from cart ?"								
-     3.1	If yes, delete the item							
-     3.2	If no, set quantity to 1
+&nbsp;&nbsp;&nbsp; 3	When customer clicks on decrement button and quantity is less than equal to zero then it should popup confirmation message : "Remove from &nbsp;&nbsp;&nbsp;&nbsp;    cart ?"								
+&nbsp;&nbsp;&nbsp;&nbsp;       3.1	If yes, delete the item							
+&nbsp;&nbsp;&nbsp;&nbsp;      3.2	If no, set quantity to 1
 
-They are working in two team
+&nbsp;&nbsp;&nbsp; They are working in two team
 
-#### Team1:
+&nbsp;&nbsp;&nbsp; #### Team1:
 
-Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
+&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
 
-#### Team2:
+&nbsp;&nbsp;&nbsp; #### Team2:
 
-Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
+&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
 
 ![Product](readme/AddToShoppingCart.png?raw=true "Title")
 >Learnings
