@@ -21,6 +21,7 @@ They  worked in two team
 
 &nbsp;&nbsp;&nbsp; Sprint Retro Board:   https://metroretro.io/board/LBTEG7ICG8K2
 
+
 - [ ] `Story 4:    'Customer has added different products in shopping cart. The customer wants the ability to change the quantity of a given cart item and it should reflect the total cart item value and total cart amount.' 											`
 
 &nbsp;&nbsp;&nbsp; #### Design Points:     
