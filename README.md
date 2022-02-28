@@ -1,12 +1,11 @@
 # Online Shopping Store.
 
 ### Features of Online Shopping Store 
-:white_check_mark: `Story 1: List out one product with title, description and price`
+:white_check_mark:  `Story 1: List out one product with title, description and price`
 
 :white_check_mark:  `Story 2: Add image and Add to Cart Button to existing Product and list out multiple Product`
 
-- [ ] `Story 3: User Story 3: As customer want to have ability to add product shopping cart and view it.
-t`
+:white_check_mark:  `Story 3: As customer want to have ability to add product shopping cart and view it.`
 
 They are working in two team
 
@@ -21,6 +20,27 @@ Sprint Retro Board:   https://metroretro.io/board/LBOFMVHSHJF2
 Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
 
 Sprint Retro Board:   https://metroretro.io/board/LBTEG7ICG8K2
+
+- [ ] `Story 4:       'Customer has added different products in shopping cart. The customer wants the ability to change the quantity of a given cart item and it should reflect the total cart item value and total cart amount.' 											`
+
+### Design Points:     
+1	Total cart price should be in header
+
+2	Product quantity limit - Minimum = 0 and Maximum = 10
+
+3	When customer clicks on decrement button and quantity is less than equal to zero then it should popup confirmation message : "Remove from cart ?"								
+     3.1	If yes, delete the item							
+     3.2	If no, set quantity to 1
+
+They are working in two team
+
+### Team1:
+
+Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
+
+### Team2:
+
+Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
 
 ![Product](readme/AddToShoppingCart.png?raw=true "Title")
 >Learnings
