@@ -7,9 +7,9 @@
 
 :white_check_mark:  `Story 3: As customer want to have ability to add product shopping cart and view it.`
 
-They  worked in two team
+&nbsp;&nbsp;&nbsp; They  worked in two team
 
-&nbsp;&nbsp;&nbsp; #### Team1:
+ #### Team1:
 
 &nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
 
