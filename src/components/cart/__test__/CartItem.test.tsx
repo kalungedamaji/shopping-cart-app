@@ -95,3 +95,25 @@ describe("User should increase or decrease quantity of cart item", () => {
         expect(productQuantityElement).toBeInTheDocument();
     })
 })
+
+describe("User has ability to remove item from cart", () => {
+
+    it("should render remove button in cart page",()=>{
+        render(<Cart productDetail={testProduct}/>);
+        const removeButtonElement = screen.getByRole("button" , {name: "Remove"})
+    
+        expect(removeButtonElement).toBeInTheDocument();
+    })
+    
+    it("should remove item from cart when delete button is clicked", () => {
+
+        render(<Cart productDetail = {testProduct} />);
+        const removeButtonElement = screen.getByRole("button", {name: "Remove"});
+
+        fireEvent.click(removeButtonElement);
+        const removedItemElement = screen.getByRole("heading", {name: "Mens Casual Premium Slim Fit T-Shirts"})
+
+        expect(removedItemElement).not.toBeInTheDocument();
+
+    })
+})

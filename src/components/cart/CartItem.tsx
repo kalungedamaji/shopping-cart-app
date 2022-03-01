@@ -18,6 +18,7 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
         setQuantity(quantity-1);
     }
 
+
     return (
       <div>
         <h3>{productDetail.name}</h3>
@@ -27,6 +28,7 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
         <p>Quantity : {quantity}</p>
         <button onClick={incrementHandler}>+</button>
         <p>Total : {productDetail.price * quantity}</p>
+        <button>Remove</button>
       </div>
   );
 };
