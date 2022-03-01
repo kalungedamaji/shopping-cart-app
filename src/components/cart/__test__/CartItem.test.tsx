@@ -82,6 +82,7 @@ describe("Author test case for the functionality of increment and decrement butt
         fireEvent.click(incrementButtonElement);
         const productQuantityElement = screen.getByText("Quantity : 2")
         const productElementV = screen.getByText("Quantity : 2")
+        const productElement = screen.getByText("Quantity : 2")
 
         expect(productQuantityElement).toBeInTheDocument();
     }) 
