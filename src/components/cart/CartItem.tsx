@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { ProductDetail } from "../product-store/Product";
 
 export interface CartProps {
   productDetail: ProductDetail;
 }
+
 
 const Cart: React.FC<CartProps> = ({ productDetail }) => {
 
@@ -25,7 +26,7 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
         <button onClick={decrementHandler}>-</button>
         <p>Quantity : {quantity}</p>
         <button onClick={incrementHandler}>+</button>
-        <p>Total : {+productDetail.price * quantity}</p>
+        <p>Total : {productDetail.price * quantity}</p>
       </div>
   );
 };
