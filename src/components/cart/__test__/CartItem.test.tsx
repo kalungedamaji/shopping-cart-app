@@ -81,5 +81,17 @@ describe("Author test case for the functionality of increment and decrement butt
         const productQuantityElement = screen.getByText("Quantity : 2")
 
         expect(productQuantityElement).toBeInTheDocument();
-    }) 
+    })
+
+
+    it("should decrease quantity by 1 unit when decrement button is pressed",()=>{
+
+        render(<CartItem productDetail={testProduct}/>);
+        const cartProductDecrementButtonOnClickElement = screen.getByRole("button",{name: "-"})
+        const productQuantityElement = screen.getByText("Quantity : 1");
+
+        fireEvent.click(cartProductDecrementButtonOnClickElement);
+
+        expect(productQuantityElement).toBe("Quantity : 0");
+    })
 })
