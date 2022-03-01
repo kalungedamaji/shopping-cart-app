@@ -5,15 +5,13 @@ import App from "../../App";
 import {BrowserRouter} from "react-router-dom";
 
 describe("Cart page tests", () => {
-
     const MockApp = () => {
         const inputAppName = "Manyavar Shop";
-        return (
-            <BrowserRouter>
-                <App appName={inputAppName}/>
-            </BrowserRouter>
-        )
-    }
+        return (<BrowserRouter>
+                  <App appName={inputAppName}/>
+               </BrowserRouter>
+        )}
+
     test("should render cart heading when cart button is clicked",()=>{
         render(<MockApp/>)
         const linkButton = screen.getByRole("link", {name: "Cart"});
@@ -21,8 +19,4 @@ describe("Cart page tests", () => {
         const cartHeading = screen.getByRole("heading" , {name: "Your Shopping Cart"})
         expect(cartHeading).toBeInTheDocument();
     })
-
-
-
-
 })

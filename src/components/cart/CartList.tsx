@@ -8,7 +8,7 @@ const CartList:React.FC=()=>{
 
     return<div>
         <ul>
-            {cartCtx.cartList.map((cartItem :ProductDetails) =>(
+            {cartCtx.cartList.map((cartItem ) =>(
                 <CartItem cartItem = {cartItem} key = {cartItem.name}/>
             ))}
         </ul>
