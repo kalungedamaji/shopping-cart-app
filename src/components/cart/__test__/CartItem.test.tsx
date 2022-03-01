@@ -73,7 +73,7 @@ describe("author test cases to render product layout in cart page", () => {
 
 describe("Author test case for the functionality of increment and decrement button", () => {
     
-    it("should increase the value of quantity by 1 when increment button is clicked", () => {
+    it.only("should increase the value of quantity by 1 when increment button is clicked", () => {
         render(<Cart productDetail={testProduct}/>);
         const incrementButtonElement = screen.getByRole('button', {name:"+"});
         
@@ -84,14 +84,14 @@ describe("Author test case for the functionality of increment and decrement butt
     })
 
 
-    it("should decrease quantity by 1 unit when decrement button is pressed",()=>{
+    it.only("should decrease quantity by 1 unit when decrement button is pressed",()=>{
 
-        render(<CartItem productDetail={testProduct}/>);
+        render(<Cart productDetail={testProduct}/>);
         const cartProductDecrementButtonOnClickElement = screen.getByRole("button",{name: "-"})
-        const productQuantityElement = screen.getByText("Quantity : 1");
 
         fireEvent.click(cartProductDecrementButtonOnClickElement);
+        const productQuantityElement = screen.getByText("Quantity : 0");
 
-        expect(productQuantityElement).toBe("Quantity : 0");
+        expect(productQuantityElement).toBeInTheDocument();
     })
 })

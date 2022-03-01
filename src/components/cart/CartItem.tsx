@@ -8,18 +8,22 @@ export interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ productDetail }) => {
 
-  const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(1);
 
-  function incrementHandler() {
-    setQuantity(quantity+1);
+    function incrementHandler() {
+        setQuantity(quantity+1);
     }
 
-  return (
+    function decrementHandler() {
+        setQuantity(quantity-1);
+    }
+
+    return (
       <div>
         <h3>{productDetail.name}</h3>
         <img src={productDetail.image} alt={productDetail.name} />
         <p>Price : {productDetail.price}</p>
-        <button>-</button>
+        <button onClick={decrementHandler}>-</button>
         <p>Quantity : {quantity}</p>
         <button onClick={incrementHandler}>+</button>
         <p>Total : {productDetail.price * quantity}</p>
