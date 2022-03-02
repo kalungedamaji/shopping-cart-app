@@ -9,7 +9,7 @@ const  App:React.FC = () => {
     
     return (
         <div>
-            <CartContextProvider>
+            <CartContextProvider >
             <Routes> 
             <Route path='/' element = {<HomePage />}> </Route> 
             <Route path='/cart' element = {<CartPage />} ></Route>

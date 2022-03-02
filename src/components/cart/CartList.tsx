@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
-import { ProductDetail } from "../product-store/Product";
-import CartContext from "../../store/CartContext";
+import CartContext, { CartProductDetail } from "../../store/CartContext";
 import Cart from "./CartItem";
 
-const CartList: React.FC = () => {
+interface CartListProps{
+  setRenderedCartList: ()=>void
+}
+
+const CartList: React.FC<CartListProps> = ({setRenderedCartList}) => {
   const cartCtx = useContext(CartContext);
 
   if (cartCtx.cartProductList.length === 0) {
@@ -12,8 +15,8 @@ const CartList: React.FC = () => {
 
   return (
     <div>
-      {cartCtx.cartProductList.map((productDetail: ProductDetail) => (
-        <Cart productDetail={productDetail} key={productDetail.name} />
+      {cartCtx.cartProductList.map((cartProductDetail: CartProductDetail) => (
+        <Cart cartProductDetail={cartProductDetail} setRenderedCartList={setRenderedCartList} key={cartProductDetail.name} />
       ))}
     </div>
   );

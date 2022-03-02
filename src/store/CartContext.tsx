@@ -1,42 +1,50 @@
 import { createContext } from "react";
-import { createVariableStatement } from "typescript";
 import { ProductDetail } from "../components/product-store/Product";
 
+export interface CartProductDetail{
+  image: string,
+  name : string,
+  price : number,
+  quantity: number
+}
+
+export interface CartProductProps{
+  cartProductDetail: CartProductDetail
+}
+
 interface CartContextType {
-  cartProductList: ProductDetail[];
+  cartProductList: CartProductDetail[];
   addItemsInCart: (product: ProductDetail) => void;
-  removeItemsFromCart: (product: ProductDetail) => void;
+  removeItemsFromCart: (product: CartProductDetail) => void;
 }
 
 const CartContext = createContext<CartContextType>({
   cartProductList: [],
   addItemsInCart: (product: ProductDetail) => {},
-  removeItemsFromCart: (product: ProductDetail) => {}
+  removeItemsFromCart: (product: CartProductDetail) => {}
 });
 
-export const CartContextProvider: React.FC = (props) => {
-  const inCart: ProductDetail[] = [];
+export const CartContextProvider : React.FC = (props) => {
+
+  const inCart: CartProductDetail[] = [];
+
 
   function addItemsHandler(product: ProductDetail) {
-    inCart.push(product);
+    let cartProduct: CartProductDetail = {
+      name : product.name,
+      image : product.image,
+      price : product.price,
+      quantity : 1
+    }
+
+    inCart.push(cartProduct);
   }
 
-  function removeItemHandler(product: ProductDetail) {
-  
-
+  function removeItemHandler(product: CartProductDetail) {
     inCart.forEach((cartItem, index) => {
       if(cartItem.name === product.name) 
          inCart.splice(index, 1);
     })
-
-   
-    console.log("Item removed", inCart);
-
-    // const requiredItem = (product1: ProductDetail) => product1.name === product.name}
-    // const productIndex = inCart.findIndex();
-
-
-    
   }
 
 const context: CartContextType = {

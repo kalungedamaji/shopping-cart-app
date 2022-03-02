@@ -1,48 +1,49 @@
 import React, { useContext, useState } from "react";
-import { ProductDetail } from "../product-store/Product";
-import CartContext from "../../store/CartContext";
+import CartContext, { CartProductDetail} from "../../store/CartContext";
 
+export interface CartProps {
+  cartProductDetail: CartProductDetail;
+  setRenderedCartList: ()=>void
+}
 
 const INITIAL_QUANTITY = 1;
 
-export interface CartProps {
-  productDetail: ProductDetail;
-}
-
-
-const Cart: React.FC<CartProps> = ({ productDetail }) => {
-
+const Cart: React.FC<CartProps> = ({ cartProductDetail, setRenderedCartList }) => {
 
   const cartCtx = useContext(CartContext);
-
-    const [quantity, setQuantity] = useState(INITIAL_QUANTITY);
-
-
+  const [quantity, setQuantity] = useState(INITIAL_QUANTITY);
 
     function incrementHandler() {
         setQuantity(quantity+1);
+        cartProductDetail.quantity = quantity;
     }
 
     function decrementHandler() {
         setQuantity(quantity-1);
+        cartProductDetail.quantity = quantity;
     }
 
     function removeItemHandler() {
-      cartCtx.removeItemsFromCart(productDetail);
+      cartCtx.removeItemsFromCart(cartProductDetail);
+      setRenderedCartList();
     }
+
 
     return (
       <div>
-        <h3>{productDetail.name}</h3>
-        <img src={productDetail.image} alt={productDetail.name} />
-        <p>Price : {productDetail.price}</p>
+        <h3>{cartProductDetail.name}</h3>
+        <img src={cartProductDetail.image} alt={cartProductDetail.name} />
+        <p>Price : {cartProductDetail.price}</p>
         <button onClick={decrementHandler}>-</button>
-        <p>Quantity : {quantity}</p>
+        <p>Quantity : {cartProductDetail.quantity}</p>
         <button onClick={incrementHandler}>+</button>
-        <p>Total : {productDetail.price * quantity}</p>
+        <p>Total : {cartProductDetail.price * cartProductDetail.quantity}</p>
         <button onClick={removeItemHandler}>Remove</button>
       </div>
   );
 };
 
 export default Cart;
+
+
+
