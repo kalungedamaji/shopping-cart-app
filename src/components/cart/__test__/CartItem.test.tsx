@@ -17,57 +17,57 @@ describe("author test cases to render product layout in cart page", () => {
     it("should render product name in cart page", () => {
 
         render(<Cart productDetail={testProduct}/>);
-        const cartProductNameElement = screen.getByRole("heading", {name:"Mens Casual Premium Slim Fit T-Shirts"})
+        const productNameElement = screen.getByRole("heading", {name:"Mens Casual Premium Slim Fit T-Shirts"})
 
-        expect(cartProductNameElement).toBeInTheDocument();
+        expect(productNameElement).toBeInTheDocument();
     })
 
     it("should render product image in cart page", () => {
         
         render(<Cart productDetail={testProduct}/>);
-        const cartProductImageElement = screen.getByAltText("Mens Casual Premium Slim Fit T-Shirts")
+        const productImageElement = screen.getByAltText("Mens Casual Premium Slim Fit T-Shirts")
 
-        expect(cartProductImageElement).toBeInTheDocument();
+        expect(productImageElement).toBeInTheDocument();
     })
 
     it("should render product price in cart page", () => {
         
         render(<Cart productDetail={testProduct}/>);
-        const cartProductPriceElement = screen.getByText("Price : 22.3")
+        const productPriceElement = screen.getByText("Price : 22.3")
     
-        expect(cartProductPriceElement).toBeInTheDocument();
+        expect(productPriceElement).toBeInTheDocument();
     })
 
     it("should render decrement button in cart page", () => {
         
         render(<Cart productDetail={testProduct}/>);
-        const cartProductDecrementButtonElement = screen.getByRole("button" , {name: "-"})
+        const decrementButtonElement = screen.getByRole("button" , {name: "-"})
     
-        expect(cartProductDecrementButtonElement).toBeInTheDocument();
+        expect(decrementButtonElement).toBeInTheDocument();
     })
 
     it("should render product quantity in cart page", () => {
         
         render(<Cart productDetail={testProduct}/>);
-        const cartProductQuantityElement = screen.getByText("Quantity : 1")
+        const productQuantityElement = screen.getByText("Quantity : 1")
     
-        expect(cartProductQuantityElement).toBeInTheDocument();
+        expect(productQuantityElement).toBeInTheDocument();
     })
 
     it("should render increment button in cart page", () => {
         
         render(<Cart productDetail={testProduct}/>);
-        const cartProductIncrementButtonElement = screen.getByRole("button" , {name: "+"})
+        const incrementButtonElement = screen.getByRole("button" , {name: "+"})
     
-        expect(cartProductIncrementButtonElement).toBeInTheDocument();
+        expect(incrementButtonElement).toBeInTheDocument();
     })
 
     it("should render total product price in cart page", () => {
         
         render(<Cart productDetail={testProduct}/>);
-        const cartTotalProductPriceElement = screen.getByText("Total : 22.3")
+        const totalCartPriceElement = screen.getByText("Total : 22.3")
     
-        expect(cartTotalProductPriceElement).toBeInTheDocument();
+        expect(totalCartPriceElement).toBeInTheDocument();
     })
 })
 

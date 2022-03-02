@@ -12,26 +12,6 @@ const MockApp:React.FC = (() => {
 
 
 describe("should render the functionality of add to cart and view cart button", () => {
-  it("should add product in cart page when add to cart button is clicked", () => {
-    
-    render( <MockApp /> );
-
-    const addToCartButtonElement = screen.getAllByRole("button", {
-      name: "Add to Cart",
-    });
-
-    fireEvent.click(addToCartButtonElement[0]);
-
-    const viewCartButtonElement = screen.getByRole("button", {
-      name: "View Cart",
-    });
-    fireEvent.click(viewCartButtonElement);
-
-    const cartPageBodyElement = screen.getByAltText("Laptop bag");
-
-    expect(cartPageBodyElement).toBeInTheDocument();
-  });
-
 
   it.only("should render empty cart-page when view cart button is pressed", () => {
     render( <MockApp /> );

@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ProductDetail } from "../product-store/Product";
+import CartContext from "../../store/CartContext";
+
+
+const INITIAL_QUANTITY = 1;
 
 export interface CartProps {
   productDetail: ProductDetail;
@@ -8,7 +12,12 @@ export interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ productDetail }) => {
 
-    const [quantity, setQuantity] = useState(1);
+
+  const cartCtx = useContext(CartContext);
+
+    const [quantity, setQuantity] = useState(INITIAL_QUANTITY);
+
+
 
     function incrementHandler() {
         setQuantity(quantity+1);
@@ -18,6 +27,9 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
         setQuantity(quantity-1);
     }
 
+    function removeItemHandler() {
+      cartCtx.removeItemsFromCart(productDetail);
+    }
 
     return (
       <div>
@@ -28,7 +40,7 @@ const Cart: React.FC<CartProps> = ({ productDetail }) => {
         <p>Quantity : {quantity}</p>
         <button onClick={incrementHandler}>+</button>
         <p>Total : {productDetail.price * quantity}</p>
-        <button>Remove</button>
+        <button onClick={removeItemHandler}>Remove</button>
       </div>
   );
 };
