@@ -1,6 +1,9 @@
 import React, {useContext, useState} from "react";
 import {CartItemType} from "../products/Product";
 import CartContext from "../../context/CartContext";
+import Swal from 'sweetalert2';
+import CartPage from "../../pages/CartPage";
+
 
 interface CartItemProps {
     cartItem : CartItemType
@@ -13,7 +16,17 @@ const CartItem:React.FC<CartItemProps>=({cartItem})=>{
     let initialQuantity = 1;
     const [quantity, setQuantity] = useState(initialQuantity);
     function increaseQuantity() {
-        setQuantity(quantity+1);
+        if(quantity<10) {
+            setQuantity(quantity + 1);
+        }
+        else{
+            Swal.fire({
+                icon: 'warning',
+                title: 'Maximum Limit',
+                text : 'Reached maximum limit , quantity can not be increased',
+                confirmButtonText: 'OK'
+            }).then()
+        }
     }
     // const cartCtx = useContext(CartContext);
     // function increaseQuantity(){
@@ -21,7 +34,25 @@ const CartItem:React.FC<CartItemProps>=({cartItem})=>{
     // }
 
     function decreaseQuantity() {
-        setQuantity(quantity-1)
+        if(quantity===1){
+            Swal.fire({
+                icon:'question',
+                title:'Remove from cart?',
+                text:'Do you want to remove this item from cart.',
+                showCancelButton:true,
+                confirmButtonText:'YES',
+                cancelButtonText:'NO',
+                confirmButtonColor: '#3085d6',
+            }).then((result) =>{
+                if(result.isConfirmed){
+                    cartCtx.removeFromCart(cartItem);
+
+                }
+            })
+        }
+        else{
+            setQuantity(quantity-1)
+        }
     }
 
     return<div>

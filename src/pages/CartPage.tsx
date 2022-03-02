@@ -1,11 +1,12 @@
 import React from "react";
 import CartList from "../components/cart/CartList";
 
-function CartPage(){
-
+const CartPage:React.FC = (() =>{
+    console.log('in cart page')
     return <div>
+
         <h2>Your Shopping Cart</h2>
         <CartList />
     </div>
-}
+})
 export default CartPage;

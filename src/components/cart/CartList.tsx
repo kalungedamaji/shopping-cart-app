@@ -5,7 +5,7 @@ import {ProductDetails} from "../products/Product";
 
 const CartList:React.FC=()=>{
     const cartCtx = useContext(CartContext);
-
+    console.log(cartCtx.cartList ,'from cartlist')
     return<div>
         <ul>
             {cartCtx.cartList.map((cartItem ) =>(
