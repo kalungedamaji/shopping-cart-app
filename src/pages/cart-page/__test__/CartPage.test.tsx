@@ -9,3 +9,4 @@ it("should render cart page header", () => {
     
     expect(cartPageHeaderElement).toBeInTheDocument();
 })
+

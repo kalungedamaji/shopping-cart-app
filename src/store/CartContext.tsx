@@ -12,7 +12,7 @@ export interface CartProductProps{
   cartProductDetail: CartProductDetail
 }
 
-interface CartContextType {
+export interface CartContextType {
   cartProductList: CartProductDetail[];
   addItemsInCart: (product: ProductDetail) => void;
   removeItemsFromCart: (product: CartProductDetail) => void;
@@ -55,7 +55,7 @@ const context: CartContextType = {
 
   return (
     <CartContext.Provider value={context}>
-      {props.children}
+     {props.children}
     </CartContext.Provider>
   );
 };

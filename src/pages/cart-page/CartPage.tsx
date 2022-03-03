@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import CartList from '../../components/cart/CartList'
 
-const HomePage:React.FC = (() => {
+const CartPage:React.FC = (() => {
 
     const [rendered , renderCartList] = useState<boolean>(false);
     console.log("inCartPage", rendered)
@@ -9,7 +9,6 @@ const HomePage:React.FC = (() => {
     function setRenderedCartList(){
      renderCartList(!rendered)
 }
-
 
     return (
        <div>
@@ -19,4 +18,4 @@ const HomePage:React.FC = (() => {
     )
 })
 
-export default HomePage
+export default CartPage
