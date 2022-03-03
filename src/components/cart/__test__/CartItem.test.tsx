@@ -7,11 +7,11 @@ const testProduct:CartProductDetail ={
     quantity: 1,
     price: 22.3,
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
+
 }
 
 describe("author test cases to render product layout in cart page", () => {
 
-    
     
     it("should render product name in cart page", () => {
 
