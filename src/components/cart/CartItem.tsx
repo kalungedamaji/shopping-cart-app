@@ -2,14 +2,15 @@ import React, {useContext, useState} from "react";
 import {CartItemType} from "../products/Product";
 import CartContext from "../../context/CartContext";
 import Swal from 'sweetalert2';
-import CartPage from "../../pages/CartPage";
 
 
 interface CartItemProps {
     cartItem : CartItemType
+    setCartPageState: () => void
 }
 
-const CartItem:React.FC<CartItemProps>=({cartItem})=>{
+const CartItem:React.FC<CartItemProps>=({cartItem, setCartPageState})=>{
+    console.log(cartItem , 'in cart Item')
     const cartCtx = useContext(CartContext);
 
     // let initialQuantity = cartCtx.getQuantityOfCartItem(cartItem);
@@ -28,10 +29,6 @@ const CartItem:React.FC<CartItemProps>=({cartItem})=>{
             }).then()
         }
     }
-    // const cartCtx = useContext(CartContext);
-    // function increaseQuantity(){
-    //    qty =   cartCtx.increaseQuantity(cartItem)
-    // }
 
     function decreaseQuantity() {
         if(quantity===1){
@@ -46,7 +43,8 @@ const CartItem:React.FC<CartItemProps>=({cartItem})=>{
             }).then((result) =>{
                 if(result.isConfirmed){
                     cartCtx.removeFromCart(cartItem);
-
+                    console.log('removed cart item')
+                    setCartPageState();
                 }
             })
         }

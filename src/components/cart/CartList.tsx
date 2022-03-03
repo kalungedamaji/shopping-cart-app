@@ -1,15 +1,16 @@
 import React, {useContext} from "react";
 import CartContext from "../../context/CartContext";
 import CartItem from "./CartItem";
-import {ProductDetails} from "../products/Product";
-
-const CartList:React.FC=()=>{
+interface CartListProps{
+    setCartPageStateHandler: () => void
+}
+const CartList:React.FC<CartListProps>=({setCartPageStateHandler})=>{
     const cartCtx = useContext(CartContext);
-    console.log(cartCtx.cartList ,'from cartlist')
+    console.log(cartCtx.cartList ,'from cart list')
     return<div>
         <ul>
             {cartCtx.cartList.map((cartItem ) =>(
-                <CartItem cartItem = {cartItem} key = {cartItem.name}/>
+                <CartItem cartItem = {cartItem} setCartPageState = {setCartPageStateHandler} key = {cartItem.name}/>
             ))}
         </ul>
     </div>
