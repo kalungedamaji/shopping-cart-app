@@ -7,7 +7,6 @@ interface CartListProps{
 
 const CartList:React.FC<CartListProps>=({setCartPageStateHandler})=>{
     const cartCtx = useContext(CartContext);
-    console.log(cartCtx.cartList ,'from cart list')
     return<div>
         <ul>
             {cartCtx.cartList.map((cartItem ) =>(

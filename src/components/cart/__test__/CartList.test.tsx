@@ -2,6 +2,7 @@ import {fireEvent, render, screen, within} from "@testing-library/react";
 import {BrowserRouter} from "react-router-dom";
 import App from "../../../App";
 import React from "react";
+import CartList from "../CartList";
 
 const MockApp = () => {
     const inputAppName = "Manyavar Shop";
@@ -13,15 +14,11 @@ const MockApp = () => {
 }
 test('should renders empty shopping cart list', () => {
     window.history.pushState({}, '', '/')
-
-
-    render(<MockApp/>);
-    const linkButton = screen.getByRole("link", {name: "Cart"});
-    fireEvent.click(linkButton)
+    render(<CartList setCartPageStateHandler={() => {}}/>);
     const cartPageContent = screen.getByRole('list')
     expect(cartPageContent).toBeEmptyDOMElement();
-
 });
+
 test('should return number of products in cart', () => {
     window.history.pushState({}, '', '/')
 

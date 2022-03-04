@@ -1,6 +1,5 @@
-import React, {createContext, useState} from "react";
+import React, {createContext } from "react";
 import {CartItemType} from "../components/products/Product";
-import cartItem from "../components/cart/CartItem";
 
 interface CartContextType{
     cartList : CartItemType[],
@@ -12,25 +11,22 @@ interface CartContextType{
 
 const CartContext = createContext<CartContextType>({
         cartList: [],
-        addToCart: (product) => {},
-        removeFromCart: (cartItem) => {},
+        addToCart: () => {},
+        removeFromCart: () => {},
         totalPrice:() =>{return 0},
-        updateQuantity:(quantity, cartItem) =>{}
+        updateQuantity:() =>{}
 });
 
 export const CartContextProvider:React.FC=((props)=>{
    const userCartList:CartItemType[]=[]
     function addToCartHandler(product:CartItemType) {
         userCartList.push(product);
-        console.log(userCartList,'list from add to cart handler')
     }
 
     function removeFromCartHandler(cartItem :CartItemType) {
         const index = userCartList.findIndex((element) =>element === cartItem);
-        console.log(cartItem,'cartItem from remove handler')
         userCartList.splice(index,1)
         //userCartList.filter((product) => cartItem.name !== product.name);
-        console.log(userCartList,'list after spice')
     }
 
     function totalPriceHandler() {
@@ -44,7 +40,6 @@ export const CartContextProvider:React.FC=((props)=>{
     function updateQuantityHandler(quantity:number , cartItem: CartItemType) {
         const index= userCartList.findIndex((element)=>element === cartItem)
         userCartList[index].quantity=quantity
-        console.log(userCartList)
     }
 
     const context:CartContextType = {

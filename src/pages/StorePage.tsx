@@ -2,7 +2,6 @@ import ProductList from "../components/products/ProductList";
 import React from "react";
 
 function StorePage(){
-    console.log("rendering store page")
 
     const inputProduct1= { image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgn8CbKIbjF4VRkw3CbngfisZKCbfHtpVFEw&usqp=CAU "
         , name : "Laptop bag",description : "Your perfect pack for everyday use and walks in the forest", price : 4000 }

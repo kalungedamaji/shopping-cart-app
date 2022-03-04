@@ -1,16 +1,10 @@
 import React from 'react';
-import {fireEvent, render, screen, within} from "@testing-library/react";
-import {BrowserRouter} from "react-router-dom";
-import App from "../../App";
+import { render, screen, within} from "@testing-library/react";
+import StorePage from "../StorePage";
 
-test('should render product list and return number of products in it on clicking store button', () => {
+test('should render product list and return number of products in it on store page', () => {
 
-    const inputAppName = "Manyavar Shop";
-    render(<BrowserRouter>
-        <App appName={inputAppName}/>
-    </BrowserRouter>);
-    const linkButton = screen.getByText(/Store/);
-    fireEvent.click(linkButton)
+    render(<StorePage/>);
 
     const cartPageContent = screen.getByRole('list')
     const {getAllByRole} = within(cartPageContent)

@@ -3,7 +3,7 @@ import {fireEvent, render, screen, waitForElementToBeRemoved} from "@testing-lib
 import {BrowserRouter} from "react-router-dom";
 import App from "../../../App";
 import CartItem from "../CartItem";
-import {CartItemType, ProductDetails} from "../../products/Product";
+import {CartItemType} from "../../products/Product";
 
 const MockApp = () => {
     const inputAppName = "Manyavar Shop";
@@ -14,7 +14,7 @@ const MockApp = () => {
     )
 }
 describe("test cases to render + and - button", () => {
-    test("should render + button ", () => {
+    test("should render + button", () => {
         render(<MockApp/>);
 
         const addCartButton = screen.getByLabelText("Laptop bag")
@@ -26,7 +26,7 @@ describe("test cases to render + and - button", () => {
         expect(plusButton).toBeInTheDocument();
     })
 
-    test("should render - button ", () => {
+    test("should render - button", () => {
         window.history.pushState({}, '', '/')
 
         render(<MockApp/>);
@@ -122,13 +122,12 @@ describe("functionality of + button" , ()=>{
 
     test('should render updated total price when qty is increased', () => {
         window.history.pushState({}, '', '/')
-
         render(<CartItem cartItem={product} setCartPageState={stateHandler} />);
 
         const plusButton = screen.getByRole("button" , {name: "+"})
         fireEvent.click(plusButton)
-
         const totalProductPrice = screen.getByText("Total : INR 400")
+
         expect(totalProductPrice).toBeInTheDocument();
     });
 })
@@ -193,7 +192,7 @@ describe("functionality of - button",()=>{
             expect(productName).not.toBeInTheDocument();
     })
 
-    test(" should render cart item with qty as 1 when no is clicked on popup", () =>{
+    test("should render cart item with qty as 1 when no is clicked on popup", () =>{
         window.history.pushState({}, '', '/')
 
         render(<MockApp/>);

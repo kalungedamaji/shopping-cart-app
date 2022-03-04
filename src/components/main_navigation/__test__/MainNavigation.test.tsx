@@ -1,26 +1,20 @@
-import {fireEvent, render, screen} from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import {BrowserRouter} from "react-router-dom";
-import App from "../../../App";
 import React from "react";
+import MainNavigation from "../MainNavigation";
 
-const MockApp=()=>{
-    const inputAppName="Manyvar Shop";
+const MockMainNavigation=()=>{
     return(
-    <BrowserRouter>
-        <App appName={inputAppName}/>
-    </BrowserRouter>
+        <BrowserRouter><MainNavigation/></BrowserRouter>
     )}
 
 test('should renders Cart link from MainNavigation', () => {
-    render(<MockApp/>);
-
+    render(<MockMainNavigation/>);
     expect(screen.getByRole('link' , { name: 'Cart' })).toHaveAttribute('href', '/CartPage');
 });
 
 test('should renders Store link from MainNavigation', () => {
-
-    render(<MockApp/>);
-
+    render(<MockMainNavigation/>);
     expect(screen.getByRole('link' , { name: 'Store' })).toHaveAttribute('href', '/');
 });
 

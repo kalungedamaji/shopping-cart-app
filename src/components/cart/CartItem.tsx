@@ -9,7 +9,6 @@ interface CartItemProps {
 }
 
 const CartItem:React.FC<CartItemProps>=({cartItem, setCartPageState})=>{
-    console.log(cartItem , 'in cart Item')
     const cartCtx = useContext(CartContext);
     let initialQuantity = cartItem.quantity;
     const [quantity, setQuantity] = useState(initialQuantity);
@@ -41,7 +40,6 @@ const CartItem:React.FC<CartItemProps>=({cartItem, setCartPageState})=>{
             }).then((result) =>{
                 if(result.isConfirmed){
                     cartCtx.removeFromCart(cartItem);
-                    console.log('removed cart item')
                     setCartPageState();
                 }
             })

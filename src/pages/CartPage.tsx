@@ -6,7 +6,6 @@ const CartPage:React.FC = (() =>{
     function setStateHandler() {
         setCartPageState(!cartPageState);
     }
-    console.log('in cart page')
     const cartCtx = useContext(CartContext);
     return <div>
         <h2>Your Shopping Cart</h2>
