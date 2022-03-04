@@ -5,7 +5,7 @@ import CartContext, { CartProductDetail } from '../../../store/CartContext';
 import { CartContextType } from '../../../store/CartContext';
 
 
-const testProduct:CartProductDetail[] = [{
+const testProducts:CartProductDetail[] = [{
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
     name:"Mens Casual Premium Slim Fit T-Shirts",
     price: 22.3,
@@ -13,15 +13,15 @@ const testProduct:CartProductDetail[] = [{
 }];
 
 function removeItemHandler(product: CartProductDetail) {
-    testProduct.forEach((cartItem, index) => {
+    testProducts.forEach((cartItem, index) => {
         if(cartItem.name === product.name) 
-           testProduct.splice(index, 1);
+           testProducts.splice(index, 1);
       })
 }
 
-
 const mockContext:CartContextType = {
-    cartProductList: testProduct,
+    cartProductList: testProducts,
+    totalCartPrice: () => {return 0},
     addItemsInCart: () => {},
     removeItemsFromCart: removeItemHandler
 }

@@ -8,6 +8,7 @@ const CartPage:React.FC = (() => {
     console.log("inCartPage", rendered)
 
     function setRenderedCartList(){
+        console.log("in cartPage render phase:", rendered)
      renderCartList(!rendered)
 }
 

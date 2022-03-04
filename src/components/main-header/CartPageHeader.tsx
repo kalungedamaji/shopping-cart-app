@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CartContext from "../../store/CartContext";
 
 interface CartPageProps {
-    cartPageName: string;
+    cartPageName: string
 }
 
 const CartPageHeader:React.FC<CartPageProps> = ({cartPageName}) => {
 
+    const cartCtx = useContext(CartContext);
+    
     let navigate = useNavigate(); 
 
     const routeChange = () =>{       
@@ -17,7 +20,7 @@ const CartPageHeader:React.FC<CartPageProps> = ({cartPageName}) => {
     return ( 
     <div>
         <h1>{cartPageName}</h1>
-        <h4>Cart Total Price: 0</h4>
+        <h4>Cart Total Price: {cartCtx.totalCartPrice()}</h4>
         <button onClick={routeChange}>Home</button>
    </div> 
     )
