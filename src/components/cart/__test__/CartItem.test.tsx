@@ -44,6 +44,8 @@ describe("test cases to render + and - button", () => {
 
 describe("test cartItem" , ()=>{
         test('should renders product name when product is added and cart button is clicked', () => {
+            window.history.pushState({}, '', '/')
+
             render(<MockApp/>);
 
             const addCartButton = screen.getByLabelText("Laptop bag")
@@ -55,6 +57,8 @@ describe("test cartItem" , ()=>{
             expect(product1Name).toBeInTheDocument();
         });
         test('should renders product price when product is added and cart button is clicked', () => {
+            window.history.pushState({}, '', '/')
+
             render(<MockApp/>);
 
             const addCartButton = screen.getByLabelText("Laptop bag")
@@ -66,6 +70,8 @@ describe("test cartItem" , ()=>{
             expect(productPrice).toBeInTheDocument();
         });
         test('should renders product total price when product is added and cart button is clicked', () => {
+            window.history.pushState({}, '', '/')
+
             render(<MockApp/>);
 
             const addCartButton = screen.getByLabelText("Laptop bag")
@@ -89,6 +95,8 @@ describe("functionality of + button" , ()=>{
     function stateHandler() {}
 
     test('should render increased quantity of product if + button is clicked', () => {
+        window.history.pushState({}, '', '/')
+
         render(<CartItem cartItem={product} setCartPageState={stateHandler}/>);
 
         const plusButton = screen.getByRole("button" , {name: "+"})
@@ -99,6 +107,9 @@ describe("functionality of + button" , ()=>{
     });
 
     test('should render a popup if quantity is max i.e 10', () => {
+        window.history.pushState({}, '', '/')
+
+
         render(<CartItem cartItem={product} setCartPageState={stateHandler} />);
 
         const plusButton = screen.getByRole("button" , {name: "+"})
@@ -110,6 +121,8 @@ describe("functionality of + button" , ()=>{
     });
 
     test('should render updated total price when qty is increased', () => {
+        window.history.pushState({}, '', '/')
+
         render(<CartItem cartItem={product} setCartPageState={stateHandler} />);
 
         const plusButton = screen.getByRole("button" , {name: "+"})
@@ -131,7 +144,9 @@ describe("functionality of - button",()=>{
 
     }
 
-    test("should render the product quantity when - button is clicked",()=>{
+    test("should render the decreased product quantity when - button is clicked",()=>{
+        window.history.pushState({}, '', '/')
+
         const product:CartItemType ={
             name:"Mens Casual Premium Slim Fit T-Shirts",
             price:200,
@@ -147,6 +162,8 @@ describe("functionality of - button",()=>{
     })
 
     test("should render a popup when - button is clicked and quantity is 1", ()=>{
+        window.history.pushState({}, '', '/')
+
         render(<CartItem cartItem={product} setCartPageState={stateHandler}/>);
 
         const minusButton = screen.getByRole("button", {name: "-"})
@@ -156,7 +173,10 @@ describe("functionality of - button",()=>{
         expect(popupTitle).toBeInTheDocument();
     })
 
-    test(" **should remove the cart item when yes is clicked on popup", async () =>{
+    test("should remove the cart item when yes is clicked on popup", async () =>{
+
+        window.history.pushState({}, '', '/')
+
         render(<MockApp/>);
             const addCartButton = screen.getByLabelText("Mens Casual T-shirt")
             fireEvent.click(addCartButton)
@@ -174,13 +194,14 @@ describe("functionality of - button",()=>{
     })
 
     test(" should render cart item with qty as 1 when no is clicked on popup", () =>{
+        window.history.pushState({}, '', '/')
+
         render(<MockApp/>);
         const addCartButton = screen.getByLabelText("Mens Casual T-shirt")
         fireEvent.click(addCartButton)
         const linkButton = screen.getByRole("link", {name: "Cart"});
         fireEvent.click(linkButton)
 
-        const productName = screen.getByText('Mens Casual T-shirt')
         const minusButton = screen.getByRole("button", {name: "-"})
         fireEvent.click(minusButton);
         const noButton = screen.getByText('NO')

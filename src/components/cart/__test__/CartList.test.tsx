@@ -12,6 +12,8 @@ const MockApp = () => {
     )
 }
 test('should renders empty shopping cart list', () => {
+    window.history.pushState({}, '', '/')
+
 
     render(<MockApp/>);
     const linkButton = screen.getByRole("link", {name: "Cart"});
@@ -21,6 +23,7 @@ test('should renders empty shopping cart list', () => {
 
 });
 test('should return number of products in cart', () => {
+    window.history.pushState({}, '', '/')
 
     render(<MockApp/>);
 
