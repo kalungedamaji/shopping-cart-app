@@ -22,11 +22,13 @@ describe("test cases to render + and - button", () => {
         const linkButton = screen.getByRole("link", {name: "Cart"});
         fireEvent.click(linkButton)
 
-        const plusButton = screen.getByRole("button" , {name : "+"})
+        const plusButton = screen.getByRole("button", {name: "+"})
         expect(plusButton).toBeInTheDocument();
     })
 
     test("should render - button ", () => {
+        window.history.pushState({}, '', '/')
+
         render(<MockApp/>);
 
         const addCartButton = screen.getByLabelText("Mens Casual T-shirt")
@@ -167,7 +169,7 @@ describe("functionality of - button",()=>{
             fireEvent.click(yesButton);
             const productName = screen.getByText('Mens Casual T-shirt')
 
-            await waitForElementToBeRemoved(() => screen.getByText('Mens Casual T-shirt'))
+            await waitForElementToBeRemoved(() => screen.queryByText('Mens Casual T-shirt'))
             expect(productName).not.toBeInTheDocument();
     })
 

@@ -1,16 +1,21 @@
 import React, {createContext, useState} from "react";
 import {CartItemType} from "../components/products/Product";
+import cartItem from "../components/cart/CartItem";
 
 interface CartContextType{
     cartList : CartItemType[],
     addToCart(product: CartItemType) :void,
-    removeFromCart(cartItem: CartItemType): void
+    removeFromCart(cartItem: CartItemType): void,
+    totalPrice() : number,
+    updateQuantity(quantity: number, cartItem: CartItemType) : void
 }
 
 const CartContext = createContext<CartContextType>({
         cartList: [],
         addToCart: (product) => {},
         removeFromCart: (cartItem) => {},
+        totalPrice:() =>{return 0},
+        updateQuantity:(quantity, cartItem) =>{}
 });
 
 export const CartContextProvider:React.FC=((props)=>{
@@ -27,10 +32,27 @@ export const CartContextProvider:React.FC=((props)=>{
         //userCartList.filter((product) => cartItem.name !== product.name);
         console.log(userCartList,'list after spice')
     }
+
+    function totalPriceHandler() {
+        let totalPrice = 0;
+        userCartList.map((cartItem) =>{
+            totalPrice = totalPrice + (cartItem.price* cartItem.quantity)
+        })
+        return totalPrice;
+    }
+
+    function updateQuantityHandler(quantity:number , cartItem: CartItemType) {
+        const index= userCartList.findIndex((element)=>element === cartItem)
+        userCartList[index].quantity=quantity
+        console.log(userCartList)
+    }
+
     const context:CartContextType = {
         cartList: userCartList,
         addToCart: addToCartHandler,
-        removeFromCart: removeFromCartHandler
+        removeFromCart: removeFromCartHandler,
+        totalPrice : totalPriceHandler,
+        updateQuantity: updateQuantityHandler
     }
     return (<CartContext.Provider value={context}>
         {props.children}

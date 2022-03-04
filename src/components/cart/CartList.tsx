@@ -4,6 +4,7 @@ import CartItem from "./CartItem";
 interface CartListProps{
     setCartPageStateHandler: () => void
 }
+
 const CartList:React.FC<CartListProps>=({setCartPageStateHandler})=>{
     const cartCtx = useContext(CartContext);
     console.log(cartCtx.cartList ,'from cart list')

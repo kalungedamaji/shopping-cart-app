@@ -3,7 +3,6 @@ import {CartItemType} from "../products/Product";
 import CartContext from "../../context/CartContext";
 import Swal from 'sweetalert2';
 
-
 interface CartItemProps {
     cartItem : CartItemType
     setCartPageState: () => void
@@ -12,13 +11,13 @@ interface CartItemProps {
 const CartItem:React.FC<CartItemProps>=({cartItem, setCartPageState})=>{
     console.log(cartItem , 'in cart Item')
     const cartCtx = useContext(CartContext);
-
-    // let initialQuantity = cartCtx.getQuantityOfCartItem(cartItem);
-    let initialQuantity = 1;
+    let initialQuantity = cartItem.quantity;
     const [quantity, setQuantity] = useState(initialQuantity);
     function increaseQuantity() {
         if(quantity<10) {
+            cartCtx.updateQuantity(quantity+1 ,cartItem);
             setQuantity(quantity + 1);
+            setCartPageState();
         }
         else{
             Swal.fire({
@@ -29,7 +28,6 @@ const CartItem:React.FC<CartItemProps>=({cartItem, setCartPageState})=>{
             }).then()
         }
     }
-
     function decreaseQuantity() {
         if(quantity===1){
             Swal.fire({
@@ -49,8 +47,9 @@ const CartItem:React.FC<CartItemProps>=({cartItem, setCartPageState})=>{
             })
         }
         else{
-            setQuantity(quantity-1)
-        }
+            cartCtx.updateQuantity(quantity-1 ,cartItem);
+            setQuantity(quantity-1);
+            setCartPageState();}
     }
 
     return<div>
