@@ -1,14 +1,14 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Header from "../Header";
+import HomePageHeader from "../HomePageHeader";
 
 const inputHomePageName = "Team 1 Mega Mart";
 
 const MockHeader: React.FC = () => {
   return (
     <BrowserRouter>
-      <Header homePageName={inputHomePageName} />
+      <HomePageHeader homePageName={inputHomePageName} />
     </BrowserRouter>
   );
 };

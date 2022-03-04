@@ -21,23 +21,10 @@ const Cart: React.FC<CartProps> = ({ cartProductDetail, setRenderedCartList }) =
 }
 
 function decrementHandler() {
+
   cartProductDetail.quantity = quantity-1;
   if(cartProductDetail.quantity === 0){
-
-      Swal.fire({
-          title: 'Are you sure?',
-          text: 'Item will be removed from the cart',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes!'
-      }).then((result) => {
-          if(result.isConfirmed){
-              cartCtx.removeItemsFromCart(cartProductDetail);
-              setRenderedCartList();
-          }
-      })
+      callDeleteConfirmationPopUp(cartProductDetail);
   }
   else
   setQuantity(quantity-1);
@@ -45,10 +32,24 @@ function decrementHandler() {
 }
 
 function removeItemHandler() {
-  cartCtx.removeItemsFromCart(cartProductDetail);
-  setRenderedCartList();
-    cartCtx.removeItemsFromCart(cartProductDetail);
-    setRenderedCartList();
+  callDeleteConfirmationPopUp(cartProductDetail);
+}
+
+function callDeleteConfirmationPopUp(cartProductDetail:CartProductDetail){
+  Swal.fire({
+      title: 'Are you sure?',
+      text: 'Item will be removed from the cart',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes!'
+  }).then((result) => {
+      if(result.isConfirmed){
+          cartCtx.removeItemsFromCart(cartProductDetail);
+          setRenderedCartList();
+      }
+  })
 }
   
 

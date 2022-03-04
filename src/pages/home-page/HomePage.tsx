@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '../../components/main-header/Header';
+import HomePageHeader from '../../components/main-header/HomePageHeader';
 import ProductStore from '../../components/product-store/ProductStore';
-
 
 
 const  HomePage:React.FC = ()=> {
@@ -13,15 +12,12 @@ const  HomePage:React.FC = ()=> {
         
     const productCollection = [inputProduct1 , inputProduct2]
 
-
-
     return (
         <div>
-            <Header homePageName="Team 1 Mega Mart"/>      
+            <HomePageHeader homePageName="Team 1 Mega Mart"/>      
             <ProductStore homePageProducts={productCollection}/>  
         </div>
     );
-
     
 }
 export default HomePage;

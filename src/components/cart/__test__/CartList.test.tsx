@@ -1,4 +1,5 @@
 import {fireEvent, render, screen} from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom';
 import CartPage from '../../../pages/cart-page/CartPage';
 import CartContext, { CartProductDetail } from '../../../store/CartContext';
 import { CartContextType } from '../../../store/CartContext';
@@ -29,9 +30,11 @@ const mockContext:CartContextType = {
 
 const MockCart:React.FC = () => {
     return (
+        <BrowserRouter>
         <CartContext.Provider value={mockContext} >
             <CartPage />
         </CartContext.Provider>
+        </BrowserRouter>
       )
   }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CartList from '../../components/cart/CartList'
+import CartPageHeader from '../../components/main-header/CartPageHeader';
 
 const CartPage:React.FC = (() => {
 
@@ -12,7 +13,7 @@ const CartPage:React.FC = (() => {
 
     return (
        <div>
-           <h1>Your Shopping Cart</h1>
+           <CartPageHeader cartPageName='Your Shopping Cart'/>
            <CartList setRenderedCartList={setRenderedCartList}/>
        </div>
     )
