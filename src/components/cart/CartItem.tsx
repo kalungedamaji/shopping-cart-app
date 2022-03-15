@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import CartContext, { CartProductDetail} from "../../store/CartContext";
 import Swal from 'sweetalert2';
+import { ProductWrapper } from "./Cart.style";
+import { Grid } from "@material-ui/core";
 
 export interface CartProps {
   cartProductDetail: CartProductDetail;
@@ -69,16 +71,39 @@ function removeItemHandler() {
 }
 
     return (
-      <div>
-        <h3>{cartProductDetail.name}</h3>
+      
+      <ProductWrapper>
+      
+      <div className="card"> 
+
+        <div className="productImage">
         <img src={cartProductDetail.image} alt={cartProductDetail.name} />
-        <p>Price : {cartProductDetail.price}</p>
-        <button onClick={decrementHandler} disabled={cartProductDetail.quantity === 0 ? true : false}>-</button>
-        <p>Quantity : {cartProductDetail.quantity}</p>
-        <button onClick={incrementHandler} disabled={cartProductDetail.quantity === 10 ? true : false}>+</button>
-        <p>Total : {cartProductDetail.price * cartProductDetail.quantity}</p>
-        <button onClick={removeItemHandler}>Remove</button>
-      </div>
+        </div>
+
+
+        <div className="productInfo">
+
+          <h3>{cartProductDetail.name}</h3>
+          <p>Price : {cartProductDetail.price}</p>
+
+         <div className="quantity">
+          <button onClick={decrementHandler} disabled={cartProductDetail.quantity === 0 ? true : false}>-</button>
+          <p>Quantity : {cartProductDetail.quantity}</p>
+          <button onClick={incrementHandler} disabled={cartProductDetail.quantity === 10 ? true : false}>+</button>
+         </div>
+          
+          <div className="removeButton">
+          <button onClick={removeItemHandler}>Remove</button>
+          </div>
+        </div>
+
+        <div className="productPrice">
+        <p className="AlignRight">Total : {cartProductDetail.price * cartProductDetail.quantity}</p>
+        </div>
+
+        </div>  
+      </ProductWrapper>
+      
   );
 };
 

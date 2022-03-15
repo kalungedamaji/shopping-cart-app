@@ -1,5 +1,9 @@
+import { IconButton, Typography } from '@material-ui/core';
+import { AddShoppingCart, Home } from '@material-ui/icons';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Wrapper } from './HomePageHeader.style';
+
 
 interface HomePageProps{
     homePageName:string
@@ -9,16 +13,24 @@ const Header:React.FC<HomePageProps> = (({homePageName}) => {
 
     let navigate = useNavigate(); 
 
-    const routeChange = () =>{       
+    const routeChangeCart = () =>{       
       let path = `/cart`; 
       navigate(path);
     } 
 
+    const routeChangeHome = () =>{       
+        let path = `/`; 
+        navigate(path);
+      } 
+
+
     return (
-        <div>
-            <h1>{homePageName}</h1>
-            <button onClick={routeChange} > View Cart </button>
-        </div>
+        <Wrapper>
+            <h1 onClick={routeChangeHome}>{homePageName}</h1>
+            <IconButton onClick={routeChangeCart} color="inherit" aria-label="add to shopping cart">
+            <AddShoppingCart fontSize='large'/>
+            </IconButton> 
+        </Wrapper>
     )
 })
 
