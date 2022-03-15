@@ -11,18 +11,14 @@
 
  #### Team1:
 
-&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
-
 &nbsp;&nbsp;&nbsp; Sprint Retro Board:   https://metroretro.io/board/LBOFMVHSHJF2
 
  #### Team2:
 
-&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
-
 &nbsp;&nbsp;&nbsp; Sprint Retro Board:   https://metroretro.io/board/LBTEG7ICG8K2
 
 
-- [ ] `Story 4:    'Customer has added different products in shopping cart. The customer wants the ability to change the quantity of a given cart item and it should reflect the total cart item value and total cart amount.' 											`
+:white_check_mark:  `Story 4:    'Customer has added different products in shopping cart. The customer wants the ability to change the quantity of a given cart item and it should reflect the total cart item value and total cart amount.' 											`
 
  #### Design Points:     
 &nbsp;&nbsp;&nbsp; 1	Total cart price should be in header
@@ -34,16 +30,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;       3.1	If yes, delete the item			
 
 &nbsp;&nbsp;&nbsp;&nbsp;      3.2	If no, set quantity to 1
-
-&nbsp;&nbsp;&nbsp; They are working in two team
-
- #### Team1:
-
-&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/eTP7bfxQ/team-pranay-vishal
-
-#### Team2:
-
-&nbsp;&nbsp;&nbsp; Sprint Board Link:    https://trello.com/b/EIA8ZDny/team-parth-shrishti
 
 ![Product](readme/AddToShoppingCart.png?raw=true "Title")
 >Learnings
