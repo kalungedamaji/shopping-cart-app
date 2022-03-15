@@ -31,7 +31,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;      3.2	If no, set quantity to 1
 
-![Product](readme/AddToShoppingCart.png?raw=true "Title")
+<img width="1438" alt="Screen Shot 2022-03-15 at 3 45 12 PM" src="https://user-images.githubusercontent.com/45869380/158356493-2b4dc4e8-21c0-4f61-b472-9bf024b114b2.png">
+<img width="1440" alt="Screen Shot 2022-03-15 at 3 45 31 PM" src="https://user-images.githubusercontent.com/45869380/158356587-b25db658-4eb8-4343-ae71-cd31203b0ede.png">
+
 >Learnings
  
             
