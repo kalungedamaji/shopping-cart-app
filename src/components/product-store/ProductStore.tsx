@@ -1,3 +1,4 @@
+import { Grid } from "@material-ui/core";
 import React from "react";
 import Product, { ProductDetail } from './Product';
 
@@ -9,11 +10,14 @@ const ProductList:React.FC<ProductListProps> = ({homePageProducts})=> {
     console.log("In product List: ", {homePageProducts});
 
 
-    return (<div>
+    return (
+    <Grid container spacing={4}>
             {homePageProducts.map((product: ProductDetail) => (
-                <Product productDetail={product} key={product.name} />
+               <Grid item key={product.name} xs={12} sm={6} md={4} lg={3}>
+               <Product productDetail={product} key={product.name} />
+               </Grid>
             ))}
-        </div>
+    </Grid>
     );
 }
 export default ProductList;

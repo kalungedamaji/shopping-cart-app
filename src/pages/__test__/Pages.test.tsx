@@ -12,55 +12,24 @@ const MockApp:React.FC = (() => {
 
 
 describe("should render the functionality of add to cart and view cart button", () => {
-  it("should add product in cart page when add to cart button is clicked", () => {
-    
-    render( <MockApp /> );
 
-    const addToCartButtonElement = screen.getAllByRole("button", {
-      name: "Add to Cart",
-    });
-
-    fireEvent.click(addToCartButtonElement[0]);
-
-    const viewCartButtonElement = screen.getByRole("button", {
-      name: "View Cart",
-    });
-    fireEvent.click(viewCartButtonElement);
-
-    const cartPageBodyElement = screen.getByAltText("Laptop bag");
-
-    expect(cartPageBodyElement).toBeInTheDocument();
-  });
-
-
-  it.only("should render empty cart-page when view cart button is pressed", () => {
+  it("should render empty cart-page when view cart button is pressed", () => {
     render( <MockApp /> );
     
-    const shoppingCartButtonElement = screen.getByRole("button", {
-    name: "View Cart",
-    });
+    const shoppingCartButtonElement = screen.getByRole("button", {name: "View Cart"});
     fireEvent.click(shoppingCartButtonElement);
-    const cartPageBodyElement = screen.getByRole("heading", {
-    name: "Your Cart is Empty !!",
-    });
+    const cartPageBodyElement = screen.getByRole("heading", {name: "Your Cart is Empty !!",});
     
     expect(cartPageBodyElement).toBeInTheDocument();
     });
 
-  it("should render a product in cart-page when view cart button is pressed", () => {
+  it.only("should render a product in cart-page when view cart button is pressed", () => {
     
     render( <MockApp /> );
 
-    const addToCartButtonElement = screen.getAllByRole("button", {
-      name: "Add to Cart",
-    });
-
-      fireEvent.click(addToCartButtonElement[0]);
-       
-
-    const shoppingCartButtonElement = screen.getByRole("button", {
-      name: "View Cart",
-    });
+    const addToCartButtonElement = screen.getAllByRole("button", { name: "Add to Cart"});
+    fireEvent.click(addToCartButtonElement[0]);
+    const shoppingCartButtonElement = screen.getByRole("button", { name: "View Cart"});
     fireEvent.click(shoppingCartButtonElement);
 
     const cartPageBodyElement = screen.getAllByAltText("Laptop bag");
@@ -72,25 +41,16 @@ describe("should render the functionality of add to cart and view cart button", 
     
     render( <MockApp /> );
 
-    const addToCartButtonElement = screen.getAllByRole("button", {
-      name: "Add to Cart",
-    });
+    const addToCartButtonElement = screen.getAllByRole("button", {name: "Add to Cart"});
     
-    addToCartButtonElement.forEach(item => {
-      fireEvent.click(item);
-    })
+    addToCartButtonElement.forEach(item => {fireEvent.click(item);})
       
 
-    const shoppingCartButtonElement = screen.getByRole("button", {
-      name: "View Cart",
-    });
+    const shoppingCartButtonElement = screen.getByRole("button", {name: "View Cart",});
     fireEvent.click(shoppingCartButtonElement);
-
     const cartPageBodyElement = screen.getAllByRole("button", {name:"+"});
 
     expect(cartPageBodyElement.length).toBe(2);
   });
-
-
 
 });
