@@ -4,7 +4,6 @@ import CartContext from "../../store/CartContext";
 import { ProductWrapper } from "./ProductCard.style";
 
 export interface ProductDetail {
-  id: string
   image: string;
   name: string;
   description: string;

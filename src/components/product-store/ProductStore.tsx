@@ -1,10 +1,9 @@
 import { Grid } from "@material-ui/core";
-import { AxiosResponse } from "axios";
 import React from "react";
 import Product, { ProductDetail } from './Product';
 
 interface ProductListProps{
-    homePageProducts:ProductDetail[] //Promise<AxiosResponse<ProductDetail[], any>>
+    homePageProducts: ProductDetail[]
 }
 const ProductList:React.FC<ProductListProps> = ({homePageProducts})=> {
 
