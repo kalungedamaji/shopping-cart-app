@@ -1,4 +1,4 @@
-import { Content, getAll, Links, ServiceResponse } from "../../../rest-client/RestClient";
+import { Content, getAll, ServiceResponse } from "../../../rest-client/RestClient";
 
 export interface ProductContent extends Content{
     id: string;

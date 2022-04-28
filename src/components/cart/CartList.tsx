@@ -2,7 +2,6 @@ import { Grid } from "@material-ui/core";
 import React, { useContext } from "react";
 import CartContext, { CartProductDetail } from "../../store/CartContext";
 import Cart from "./CartItem";
-import { CartWrapper } from "./CartList.style";
 
 interface CartListProps{
   setRenderedCartList: ()=>void
@@ -10,11 +9,10 @@ interface CartListProps{
 
 const CartList: React.FC<CartListProps> = ({setRenderedCartList}) => {
   const cartCtx = useContext(CartContext);
-
+  
   if (cartCtx.cartProductList.length === 0) {
     return <h3>Your Cart is Empty !!</h3>;
   }
-
   return (
     
     <Grid container spacing={4} direction="column">
@@ -26,6 +24,6 @@ const CartList: React.FC<CartListProps> = ({setRenderedCartList}) => {
     </Grid>
    
   );
-};
+}
 
 export default CartList;

@@ -3,11 +3,11 @@ import { CartProductDetail } from '../../../store/CartContext';
 import Cart from '../CartItem';
 
 const testProduct:CartProductDetail ={
-    name:"Mens Casual Premium Slim Fit T-Shirts",
+    name: "Mens Casual Premium Slim Fit T-Shirts",
     quantity: 1,
     price: 22.3,
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU"
-
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
+    id: "b4f5f670-269c-42d1-8753-89a212344c66"
 }
 
 describe("author test cases to render product layout in cart page", () => {
