@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import CartContext from "../../store/CartContext";
+import CartContext, { CartProductDetail } from "../../store/CartContext";
+import { CartItemsContent, CartItemServiceResponse, createCartItem } from "../cart/api/CartApi";
 import { ProductWrapper } from "./ProductCard.style";
 
 export interface ProductDetail {
@@ -19,8 +20,18 @@ const Product: React.FC<ProductProps> = ({ productDetail }) => {
   console.log("In product: ", { productDetail });
 
   function itemAddHandler() {
-    cartCtx.addItemsInCart(productDetail);
+    let cartItem: CartProductDetail = {
+      id: productDetail.id,
+      name : productDetail.name,
+      image : productDetail.image,
+      price : productDetail.price,
+      quantity : 1
+    }
+    cartCtx.addItemsInCart(cartItem);
+    createCartItem(cartItem);
   }
+
+  
 
   return (
     <ProductWrapper>
