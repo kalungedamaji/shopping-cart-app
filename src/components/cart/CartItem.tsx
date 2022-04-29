@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import CartContext, { CartProductDetail} from "../../store/CartContext";
 import Swal from 'sweetalert2';
 import { ProductWrapper } from "./Cart.style";
-import { Grid } from "@material-ui/core";
+import {updateCartItems } from "./api/CartApi";
 
 export interface CartProps {
   cartProductDetail: CartProductDetail;
@@ -19,6 +19,7 @@ const Cart: React.FC<CartProps> = ({ cartProductDetail, setRenderedCartList }) =
 
 function incrementHandler() {
     cartProductDetail.quantity = cartProductDetail.quantity+1;
+    updateCartItems(cartProductDetail);
     setQuantity(cartProductDetail.quantity);
     setRenderedCartList();
     console.log("quantity is incremented")
@@ -48,6 +49,7 @@ function decrementHandler() {
   setQuantity(cartProductDetail.quantity);
   setRenderedCartList();
   cartProductDetail.quantity = cartProductDetail.quantity-1; 
+  updateCartItems(cartProductDetail);
   console.log("quantity is decremented")
   }
 }

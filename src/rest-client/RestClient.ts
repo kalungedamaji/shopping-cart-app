@@ -39,3 +39,14 @@ export function create<Type ,T> (serviceRequest: ServiceRequest<T>): ()=> Promis
         return response.data;
     }
 }
+export function update<T>(serviceRequest: ServiceRequest<T>): () => Promise<void>{
+    return async(): Promise<void> =>{
+        const response = await axios
+        .put(serviceRequest.url, serviceRequest.requestBody, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+        console.log(response.data);
+    }
+}
