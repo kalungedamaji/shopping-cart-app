@@ -1,4 +1,6 @@
 import axios from "axios";
+import { ProductDetail } from "../components/product-store/Product";
+import { CartProductDetail } from "../store/CartContext";
 
 export interface Links{
     rel: string;
@@ -10,6 +12,10 @@ export interface Content{
 export interface ServiceResponse{
     links: Links[];
 }
+export interface ServiceRequest<T>{
+    url: string;
+    requestBody: T;
+}
 export function getAll<Type> (url: string): () => Promise<Type>{
     return async(): Promise<Type> =>{
         const response = await axios
@@ -20,4 +26,16 @@ export function getAll<Type> (url: string): () => Promise<Type>{
         });
         return response.data;
 }
+}
+export function create<Type ,T> (serviceRequest: ServiceRequest<T>): ()=> Promise<Type>{
+
+    return async(): Promise<Type> =>{
+        const response = await axios
+        .post<Type>(serviceRequest.url, serviceRequest.requestBody ,{
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+        return response.data;
+    }
 }

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { getAllCartItems, AllCartItemsServiceResponse, CartItemsContent } from "../components/cart/api/CartApi";
+import { getAllCartItems, AllCartItemsServiceResponse, CartItemsContent, createCartItem, CartItemServiceResponse } from "../components/cart/api/CartApi";
 import { ProductDetail } from "../components/product-store/Product";
 
 
@@ -19,7 +19,7 @@ export interface CartContextType {
   setCartProductList: (cartItemList: CartProductDetail[]) => void,
   cartProductList: CartProductDetail[],
   totalCartPrice: () => number,
-  addItemsInCart: (product: ProductDetail) => void,
+  addItemsInCart: (cartProduct: CartProductDetail) => void,
   removeItemsFromCart: (product: CartProductDetail) => void
 }
 
@@ -27,7 +27,7 @@ const CartContext = createContext<CartContextType>({
   setCartProductList: (cartItemList: CartProductDetail[]) => {},
   cartProductList: [],
   totalCartPrice: () => {return 0},
-  addItemsInCart: (product: ProductDetail) => {},
+  addItemsInCart: (cartProduct: CartProductDetail) => {},
   removeItemsFromCart: (product: CartProductDetail) => {}
 });
 
@@ -50,15 +50,7 @@ export const CartContextProvider : React.FC = (props) => {
     return price;
   }
 
-  function addItemsHandler(product: ProductDetail) {
-    let cartProduct: CartProductDetail = {
-      id: product.id,
-      name : product.name,
-      image : product.image,
-      price : product.price,
-      quantity : 1
-    }
-    
+  function addItemsHandler(cartProduct: CartProductDetail) {
     inCart.push(cartProduct);
   }
 
