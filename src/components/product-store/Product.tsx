@@ -21,6 +21,7 @@ const Product: React.FC<ProductProps> = ({ productDetail }) => {
 
   function itemAddHandler() {
     let cartItem: CartProductDetail = {
+      customerId: "b4f5f670-269c-42d1-8753-89a212344c66",
       id: productDetail.id,
       name : productDetail.name,
       image : productDetail.image,

@@ -4,6 +4,7 @@ import { ProductDetail } from "../components/product-store/Product";
 
 
 export interface CartProductDetail{
+  customerId: string,
   id: string,
   image: string,
   name : string,
@@ -62,10 +63,11 @@ export const CartContextProvider : React.FC = (props) => {
          }
     })
   }
-  getAllCartItems().then((responseData: AllCartItemsServiceResponse)=>{
+  getAllCartItems("b4f5f670-269c-42d1-8753-89a212344c66").then((responseData: AllCartItemsServiceResponse)=>{
     console.log(responseData);  
     const cartItemDetails: CartProductDetail[] = responseData.content.map((content: CartItemsContent)=>{
         let cartItemDetail: CartProductDetail = {
+            customerId : "b4f5f670-269c-42d1-8753-89a212344c66",
             id : content.id,
             name : content.name,
             image : content.image,
