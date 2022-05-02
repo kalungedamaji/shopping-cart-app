@@ -1,5 +1,5 @@
 import React from 'react'
-import {screen, render} from '@testing-library/react'
+import {screen, render, fireEvent} from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom';
 import PaymentPageHeader from '../header/PaymentPageHeader';
 
@@ -26,3 +26,11 @@ it("should render go to cart button",()=>{
     const headerButtonElement = screen.getByRole("button",{name: "Go To Cart"})
     expect (headerButtonElement).toBeInTheDocument();
 })
+
+it("should navigate to cart page when go to cart button is pressed",()=>{
+    render(<MockPaymentHeader/>)
+    const goToCartButtonElement = screen.getByRole("button",{name:"Go To Cart"})
+    fireEvent.click(goToCartButtonElement);
+    const cartPageHeaderName = screen.getByText("Your Shopping Cart")
+    expect(cartPageHeaderName).toBeInTheDocument();
+});
