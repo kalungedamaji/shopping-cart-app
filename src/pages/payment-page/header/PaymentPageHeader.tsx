@@ -1,5 +1,6 @@
 import React from 'react'
-import { Wrapper } from './HomePageHeader.style';
+import { Wrapper } from '../../../components/main-header/HomePageHeader.style';
+import {Button} from "@material-ui/core";
 
 
 interface PaymentPageHeaderProps{
@@ -11,6 +12,7 @@ const PaymentPageHeader:React.FC<PaymentPageHeaderProps> = ({paymentPageName}) =
     return (
         <Wrapper>
             <h2>{paymentPageName}</h2>
+            <Button>Go To Cart</Button>
         </Wrapper>
     )
 }

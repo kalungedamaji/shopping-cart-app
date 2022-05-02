@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import CartList from '../../components/cart/CartList'
-import CartPageHeader from '../../components/main-header/CartPageHeader';
+import CartPageHeader from './header/CartPageHeader';
 import HomePageHeader from '../../components/main-header/HomePageHeader';
 
 const CartPage:React.FC = (() => {
