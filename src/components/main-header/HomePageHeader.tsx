@@ -1,7 +1,7 @@
-import { IconButton, Typography } from '@material-ui/core';
-import { AddShoppingCart, Home } from '@material-ui/icons';
+import { IconButton } from '@material-ui/core';
+import { AddShoppingCart} from '@material-ui/icons';
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { Wrapper } from './HomePageHeader.style';
 
 
@@ -27,11 +27,11 @@ const Header:React.FC<HomePageProps> = (({homePageName}) => {
     return (
         <Wrapper>
             <h1 onClick={routeChangeHome}>{homePageName}</h1>
-            <IconButton onClick={routeChangeCart} color="inherit" aria-label="add to shopping cart">
+            <IconButton onClick={routeChangeCart} color="inherit" aria-label="View Cart">
             <AddShoppingCart fontSize='large'/>
             </IconButton> 
         </Wrapper>
     )
 })
 
-export default Header
+export default Header;
