@@ -1,6 +1,6 @@
 import {screen, render} from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom';
-import CartPageHeader from '../CartPageHeader'
+import CartPageHeader from '../header/CartPageHeader'
 
 const MockCartHeader: React.FC = () => {
     const inputCartPageName = "Your Shopping Cart" 

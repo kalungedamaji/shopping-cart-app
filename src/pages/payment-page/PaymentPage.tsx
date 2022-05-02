@@ -1,5 +1,5 @@
 import React from 'react';
-import PaymentPageHeader from "../../components/main-header/PaymentPageHeader";
+import PaymentPageHeader from "./header/PaymentPageHeader";
 
 const  PaymentPage:React.FC = ()=> {
 

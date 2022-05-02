@@ -1,7 +1,7 @@
 import React from 'react'
 import {screen, render} from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom';
-import PaymentPageHeader from '../PaymentPageHeader';
+import PaymentPageHeader from '../header/PaymentPageHeader';
 
 const inputPaymentPageName = "Payment Page";
 
@@ -19,4 +19,10 @@ it("should render payment page header name", () => {
     const headerNameElement = screen.getByRole("heading", {name: "Payment Page"})
 
     expect(headerNameElement).toBeInTheDocument();
+})
+
+it("should render go to cart button",()=>{
+    render(<MockPaymentHeader/>)
+    const headerButtonElement = screen.getByRole("button",{name: "Go To Cart"})
+    expect (headerButtonElement).toBeInTheDocument();
 })
