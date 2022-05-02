@@ -4,7 +4,7 @@ import PaymentPage from "../PaymentPage"
 it("should render payment page header", () => {
 
     render(<PaymentPage />)
-    const paymentPageHeaderElement=screen.getByRole("heading", {name: "Payments"})
-    
+    const paymentPageHeaderElement=screen.getByText( "Payment Page")
+    //getByRole("heading", {name: "Payment Page"})
     expect(paymentPageHeaderElement).toBeInTheDocument();
 })
