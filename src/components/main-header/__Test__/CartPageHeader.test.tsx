@@ -1,6 +1,8 @@
-import {screen, render} from '@testing-library/react'
+import {screen, render, fireEvent} from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom';
 import CartPageHeader from '../CartPageHeader'
+import App from "../../../App";
+import React from "react";
 
 const MockCartHeader: React.FC = () => {
     const inputCartPageName = "Your Shopping Cart" 
@@ -11,7 +13,13 @@ const MockCartHeader: React.FC = () => {
       </BrowserRouter>
     );
   };
-
+const MockApp:React.FC = (() => {
+    return (
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    )
+})
 
 describe("should render cart page header", () => {
 
@@ -26,17 +34,36 @@ describe("should render cart page header", () => {
     it("should render cart total price", () => {
         render(<MockCartHeader />)
 
-        const headerCartPriceElement = screen.getByRole("heading", {name: "Cart Total Price: 0"})
+        const headerCartPriceElement = screen.getByRole("heading", {name: "Subtotal: 0"})
 
         expect(headerCartPriceElement).toBeInTheDocument();
     })
 
-    it("should render Home button", () => {
+    // it("should render Home button", () => {
+    //     render(<MockCartHeader />)
+    //
+    //     const headerHomeButtonElement = screen.getByRole("button", {name: "Your Shopping Cart"})
+    //
+    //     expect(headerHomeButtonElement).toBeInTheDocument();
+    // })
+
+    it("should render Proceed to buy button",() =>{
         render(<MockCartHeader />)
 
-        const headerHomeButtonElement = screen.getByRole("button", {name: "Home"})
+        const ProceedToBuyButton = screen.getByRole("button", {name: "Proceed To Buy"})
 
-        expect(headerHomeButtonElement).toBeInTheDocument();
+        expect((ProceedToBuyButton)).toBeInTheDocument();
+    })
+    it("should redirect to Payment page",() =>{
+        render(<MockApp />)
+        const shoppingCartButtonElement = screen.getByRole("button", {name: "View Cart"});
+        fireEvent.click(shoppingCartButtonElement);
+        const ProceedToBuyButton = screen.getByRole("button", {name: "Proceed To Buy"})
+        fireEvent.click(ProceedToBuyButton);
+
+        const message = screen.getByText( "Payment Page")
+
+        expect(message).toBeInTheDocument();
     })
 })
 
