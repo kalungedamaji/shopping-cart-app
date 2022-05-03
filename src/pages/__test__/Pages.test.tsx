@@ -1,6 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import App from "../../App";
+import React from "react";
+import PaymentPageHeader from "../payment-page/header/PaymentPageHeader";
 
 const MockApp:React.FC = (() => {
   return (
@@ -51,6 +53,14 @@ describe("should render the functionality of add to cart and view cart button", 
     const cartPageBodyElement = screen.getAllByRole("button", {name:"+"});
 
     expect(cartPageBodyElement.length).toBe(2);
+  });
+
+  it("should navigate to cart page when go to cart button is pressed",()=>{
+    render(<PaymentPageHeader paymentPageName="Payment Page"/>)
+    const goToCartButtonElement = screen.getByRole("button",{name:"Go To Cart"})
+    fireEvent.click(goToCartButtonElement);
+    const proceedToBuyButtonElement = screen.getByRole("button",{name:"Proceed To Buy"})
+    expect(proceedToBuyButtonElement).toBeInTheDocument();
   });
 
 });

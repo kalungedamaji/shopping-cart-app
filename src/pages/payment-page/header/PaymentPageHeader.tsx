@@ -1,6 +1,6 @@
 import React from 'react'
 import { Wrapper } from '../../../components/main-header/HomePageHeader.style';
-import {Button} from "@material-ui/core";
+import {useNavigate} from "react-router-dom";
 
 
 interface PaymentPageHeaderProps{
@@ -9,10 +9,15 @@ interface PaymentPageHeaderProps{
 
 const PaymentPageHeader:React.FC<PaymentPageHeaderProps> = ({paymentPageName}) => {
 
+    let navigate = useNavigate();
+    const routeChangeCartPage = () =>{
+        let path = '/cart';
+        navigate(path);
+    }
     return (
         <Wrapper>
             <h2>{paymentPageName}</h2>
-            <Button>Go To Cart</Button>
+            <button onClick={routeChangeCartPage}>Go To Cart</button>
         </Wrapper>
     )
 }
