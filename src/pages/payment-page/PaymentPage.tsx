@@ -8,6 +8,9 @@ const  PaymentPage:React.FC = ()=> {
         <h1>
             <PaymentPageHeader paymentPageName='Payment Page'/>
         </h1>
+        <div>
+            <h4>Shipping Address</h4>
+        </div>
     </div>)
         
 
