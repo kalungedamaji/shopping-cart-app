@@ -27,6 +27,14 @@ const  PaymentPage:React.FC = ()=> {
 
     }, [])
 
+    // async function getAddress(){
+    //     let value= await getCustomer("cfd14c2f-b0ae-4ce4-b25c-7859fcc1685b");
+    //     console.log("value",value.address)
+    //     return  value.address;
+    //     console.log("addrress",value.address)
+    //
+    //}
+
     let navigate = useNavigate();
     const routeChangeOrderPage = () =>{
         let path = '/orders';
