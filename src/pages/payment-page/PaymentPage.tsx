@@ -3,6 +3,7 @@ import PaymentPageHeader from "./header/PaymentPageHeader";
 import { getCustomer} from "../../components/customer/api/CustomerApi";
 import {CustomerDetail} from "../../components/customer/Customer";
 import HomePageHeader from "../../components/main-header/HomePageHeader";
+import {useNavigate} from "react-router-dom";
 
 const  PaymentPage:React.FC = ()=> {
 
@@ -26,6 +27,11 @@ const  PaymentPage:React.FC = ()=> {
 
     }, [])
 
+    let navigate = useNavigate();
+    const routeChangeOrderPage = () =>{
+        let path = '/orders';
+        navigate(path);
+    }
 
     return(
     <div>
@@ -40,7 +46,7 @@ const  PaymentPage:React.FC = ()=> {
             <h4>Shipping Address</h4>
             <h4>{customer?.address}</h4>
         </div>
-        <button>Pay</button>
+        <button onClick={routeChangeOrderPage}>Pay</button>
     </div>)
         
 

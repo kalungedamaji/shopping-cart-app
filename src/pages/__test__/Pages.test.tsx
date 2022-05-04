@@ -63,4 +63,11 @@ describe("should render the functionality of add to cart and view cart button", 
     expect(proceedToBuyButtonElement).toBeInTheDocument();
   });
 
+  it('should render Orders page when pay button is clicked', () => {
+    render( <MockApp /> );
+    const payButtonElement = screen.getByRole("button",{name:"Pay"})
+    fireEvent.click(payButtonElement);
+    const ordersPageHeaderElement = screen.getByText("Your Orders")
+    expect(ordersPageHeaderElement).toBeInTheDocument();
+  });
 });

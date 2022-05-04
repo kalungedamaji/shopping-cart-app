@@ -1,6 +1,7 @@
 import {render, screen, waitFor} from "@testing-library/react"
 import PaymentPage from "../PaymentPage"
 import {BrowserRouter} from "react-router-dom";
+import React from "react";
 
 it("should render payment page header", () => {
 
@@ -23,8 +24,9 @@ it("should display shipping address on payment page", async ()=>{
     })
 })
 
-it("should display 'pay' button on paymnet page",()=>{
+it("should display 'pay' button on payment page",()=>{
     render(<BrowserRouter><PaymentPage /></BrowserRouter>)
     const payButtonElement = screen.getByRole("button",{name:"Pay"})
     expect(payButtonElement).toBeInTheDocument();
 })
+
