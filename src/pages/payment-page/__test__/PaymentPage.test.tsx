@@ -18,6 +18,13 @@ it("should display 'shipping address' title on payment page", ()=>{
 it("should display shipping address on payment page", async ()=>{
     render(<BrowserRouter><PaymentPage /></BrowserRouter>)
     waitFor(() => {
-        expect(screen.getByText("Lunkad Realty, Office No 802, 8th Floor Sky Vista, Mhada Colony, Viman Nagar, Pune, Maharashtra 411014")).toBeInTheDocument();
+        expect(screen.getByText("Lunkad Realty, Office No 802, 8th Floor Sky Vista, Mhada Colony, Viman Nagar, Pune, Maharashtra 411014"))
+            .toBeInTheDocument();
     })
+})
+
+it("should display 'pay' button on paymnet page",()=>{
+    render(<BrowserRouter><PaymentPage /></BrowserRouter>)
+    const payButtonElement = screen.getByRole("button",{name:"Pay"})
+    expect(payButtonElement).toBeInTheDocument();
 })
