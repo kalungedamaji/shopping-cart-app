@@ -1,5 +1,6 @@
 import React from 'react';
 import HomePageHeader from "../../components/main-header/HomePageHeader";
+import OrdersPageHeader from "./header/OrdersPageHeader";
 
     const  OrdersPage:React.FC = ()=> {
 
@@ -7,7 +8,7 @@ import HomePageHeader from "../../components/main-header/HomePageHeader";
         return(
             <div>
                 <div><HomePageHeader homePageName="Meta Mart"/></div>
-                <h4>Your Orders</h4>
+                <div><OrdersPageHeader orderPageName="Your Orders"/></div>
             </div>
         )
     }
