@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import {render, screen, waitFor} from "@testing-library/react"
 import PaymentPage from "../PaymentPage"
 import {BrowserRouter} from "react-router-dom";
 
@@ -9,8 +9,15 @@ it("should render payment page header", () => {
     expect(paymentPageHeaderElement).toBeInTheDocument();
 })
 
-it("should display shipping address on payment page", ()=>{
+it("should display 'shipping address' title on payment page", ()=>{
     render(<BrowserRouter><PaymentPage /></BrowserRouter>)
     const addressElement = screen.getByText("Shipping Address")
     expect(addressElement).toBeInTheDocument();
+})
+
+it("should display shipping address on payment page", async ()=>{
+    render(<BrowserRouter><PaymentPage /></BrowserRouter>)
+    waitFor(() => {
+        expect(screen.getByText("Lunkad Realty, Office No 802, 8th Floor Sky Vista, Mhada Colony, Viman Nagar, Pune, Maharashtra 411014")).toBeInTheDocument();
+    })
 })

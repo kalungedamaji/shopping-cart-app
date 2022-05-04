@@ -1,6 +1,4 @@
 import axios from "axios";
-import { ProductDetail } from "../components/product-store/Product";
-import { CartProductDetail } from "../store/CartContext";
 
 export interface Links{
     rel: string;
@@ -27,6 +25,18 @@ export function getAll<Type> (url: string): () => Promise<Type>{
         return response.data;
 }
 }
+export function getResource<Type> (url: string): () => Promise<Type>{
+    return async(): Promise<Type> =>{
+        const response = await axios
+            .get<Type>(url, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
+        return response.data;
+    }
+}
+
 export function create<Type ,T> (serviceRequest: ServiceRequest<T>): ()=> Promise<Type>{
 
     return async(): Promise<Type> =>{
