@@ -40,6 +40,7 @@ const  PaymentPage:React.FC = ()=> {
             <h4>Shipping Address</h4>
             <h4>{customer?.address}</h4>
         </div>
+        <button>Pay</button>
     </div>)
         
 
