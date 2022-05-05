@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import HomePageHeader from "../HomePageHeader";
 
@@ -37,4 +37,6 @@ it('should render view orders button',  ()=> {
   const viewOrdersButtonElement = screen.getByRole("button",{
     name:"View Orders",
   });
+  expect(viewOrdersButtonElement).toBeInTheDocument();
 });
+
