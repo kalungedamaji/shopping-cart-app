@@ -3,6 +3,7 @@ import PaymentPage from "../PaymentPage"
 import {BrowserRouter} from "react-router-dom";
 import React from "react";
 
+describe("tests for payment page ",()=>{
 it("should render payment page header", () => {
 
     render(<BrowserRouter><PaymentPage /></BrowserRouter>)
@@ -18,8 +19,8 @@ it("should display 'shipping address' title on payment page", ()=>{
 
 it("should display shipping address on payment page", async ()=>{
     render(<BrowserRouter><PaymentPage /></BrowserRouter>)
-    waitFor(() => {
-        expect(screen.getByText("Lunkad Realty, Office No 802, 8th Floor Sky Vista, Mhada Colony, Viman Nagar, Pune, Maharashtra 411014"))
+    await waitFor(() => {
+        expect(screen.getByText("Indore"))
             .toBeInTheDocument();
     })
 })
@@ -30,3 +31,4 @@ it("should display 'pay' button on payment page",()=>{
     expect(payButtonElement).toBeInTheDocument();
 })
 
+})

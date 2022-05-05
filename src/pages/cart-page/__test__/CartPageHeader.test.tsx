@@ -1,6 +1,6 @@
 import {screen, render, fireEvent} from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom';
-import CartPageHeader from '../CartPageHeader'
+import CartPageHeader from '../header/CartPageHeader'
 import App from "../../../App";
 import React from "react";
 
@@ -66,4 +66,3 @@ describe("should render cart page header", () => {
         expect(message).toBeInTheDocument();
     })
 })
-

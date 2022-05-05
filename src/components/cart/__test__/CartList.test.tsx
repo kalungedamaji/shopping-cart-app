@@ -6,6 +6,7 @@ import { CartContextType } from '../../../store/CartContext';
 
 
 const testProducts:CartProductDetail[] = [{
+    customerId: "b4f5f670-269c-42d1-8753-89a212344c66",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DEPI4N9XwG1K7nZb8LG-6VoUgNi-y9IlOg&usqp=CAU",
     name:"Mens Casual Premium Slim Fit T-Shirts",
     price: 22.3,

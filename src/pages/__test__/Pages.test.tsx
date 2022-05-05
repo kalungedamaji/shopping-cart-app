@@ -19,12 +19,14 @@ describe("should render the functionality of add to cart and view cart button", 
     
     const shoppingCartButtonElement = screen.getByRole("button", {name: "View Cart"});
     fireEvent.click(shoppingCartButtonElement);
+
     const cartPageBodyElement = screen.getByRole("heading", {name: "Your Cart is Empty !!",});
     
     expect(cartPageBodyElement).toBeInTheDocument();
-    });
 
-  it.only("should render a product in cart-page when view cart button is pressed", () => {
+  });
+
+  it("should render a product in cart-page when view cart button is pressed", () => {
     
     render( <MockApp /> );
 
@@ -35,7 +37,7 @@ describe("should render the functionality of add to cart and view cart button", 
 
     const cartPageBodyElement = screen.getAllByAltText("Laptop bag");
 
-    expect(cartPageBodyElement).toBeInTheDocument;
+    expect(cartPageBodyElement).toBeInTheDocument();
   });
 
   it("should render multiple products in cart-page when view cart button is pressed", () => {
