@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import CartContext, { CartProductDetail } from "../../store/CartContext";
-import { CartItemsContent, CartItemServiceResponse, createCartItem } from "../cart/api/CartApi";
+import { createCartItem } from "../cart/api/CartApi";
 import { ProductWrapper } from "./ProductCard.style";
 
 export interface ProductDetail {
@@ -37,7 +37,7 @@ const Product: React.FC<ProductProps> = ({ productDetail }) => {
   return (
     <ProductWrapper>
     <div className="Card">
-        <div className="image"> 
+        <div>
             <img src={productDetail.image} alt={productDetail.name}></img>          
         </div>
         <div className="Flex">

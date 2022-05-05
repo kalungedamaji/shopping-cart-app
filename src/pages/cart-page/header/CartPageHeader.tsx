@@ -17,9 +17,11 @@ const CartPageHeader:React.FC<CartPageProps> = ({cartPageName}) => {
     }
     return (
         <Wrapper>
+            <div>
             <h2>{cartPageName}</h2>
             <h2>Subtotal: {cartCtx.totalCartPrice()}</h2>
-            <button onClick={routeChangePaymentPage}>Proceed To Buy</button>
+            <button className="submitButton" onClick={routeChangePaymentPage}>Proceed To Buy</button>
+            </div>
         </Wrapper>
     )
 }

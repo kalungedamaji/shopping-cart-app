@@ -6,8 +6,8 @@ display: flex;
 flex-direction: column;    
 justify-content: space-between;
 border: 1px solid black;
-border-width: 1px; 
-padding: 15px; 
+padding: 15px;
+  min-height: 400px;
 } 
 
 .Flex{
@@ -15,9 +15,9 @@ padding: 15px;
     flex-direction: row;
     justify-content: space-between;
 }
-.image{
+img{
     max-width: 200px;
     max-height: 250px;
-    align-self: center;
+    padding-left: 80px;
 }
-` 
+`
