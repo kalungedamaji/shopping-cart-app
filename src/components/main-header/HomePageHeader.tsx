@@ -32,12 +32,14 @@ const Header:React.FC<HomePageProps> = (({homePageName}) => {
     return (
         <Wrapper>
             <h1 onClick={routeChangeHomePage}>{homePageName}</h1>
+            <div>
             <IconButton onClick={routeChangeCartPage} color="inherit" aria-label="View Cart">
             <ShoppingCart fontSize='large'/>
             </IconButton>
             <IconButton onClick={routeChangeOrdersPage} color="inherit" aria-label="View Orders">
                 <PlaylistAddCheck fontSize='large'/>
             </IconButton>
+            </div>
         </Wrapper>
     )
 })
