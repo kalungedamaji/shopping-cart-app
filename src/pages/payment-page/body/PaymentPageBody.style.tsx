@@ -3,6 +3,14 @@ export const PaymentBodyWrapper = styled.div`
   div {
     margin-left: 20px;
   }
+  .paymentMethod{
+    border: 2px solid #9d9696;
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 30px;
+    
+  }
 
   .address {
     border: 2px solid #9d9696;
@@ -22,7 +30,7 @@ export const PaymentBodyWrapper = styled.div`
     border: none;
     border-bottom: 2px solid #9a8c8c;
     padding: 10px;
-    margin-left: 45%;
+    //margin-left: 45%;
     height: 20px;
     width: -moz-fit-content;
     background-color: #e8e2e2;

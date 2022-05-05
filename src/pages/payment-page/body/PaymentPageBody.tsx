@@ -60,15 +60,17 @@ const  PaymentPageBody:React.FC = ()=> {
 
     return<div>
     <PaymentBodyWrapper>
-        <div className="address"><h3>Shipping Address</h3>
-        <h4 className="addressField">{customer?.address}</h4>
+        <div className="address">
+            <h3>Shipping Address</h3>
+            <p className="addressField">{customer?.address}</p>
         </div>
+        <div className="paymentMethod">
         <List
             sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
             component="nav"
         >
             <FormControl>
-                <FormLabel id="demo-radio-buttons-group-label">Payment Methods</FormLabel>
+                <FormLabel id="demo-radio-buttons-group-label"><b>Payment Methods</b></FormLabel>
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     name="radio-buttons-group"
@@ -81,20 +83,23 @@ const  PaymentPageBody:React.FC = ()=> {
                             <ListItem>
                                 <input className="input" type="text" placeholder="Enter Card Number" name="cardNumber" required/><ListItem>
                             </ListItem>
-                                <input className="input" type="number" placeholder="Year" name="year" required/>
+                            </ListItem>
+                            <ListItem>
+
+                            <input className="input" placeholder="Year" name="year" required/>
                                 <select className="dropdown" name="month" id="month">
-                                    <option value="volvo">January</option>
-                                    <option value="saab">February</option>
-                                    <option value="opel">March</option>
-                                    <option value="audi">April</option>
-                                    <option value="audi">May</option>
-                                    <option value="audi">June</option>
-                                    <option value="audi">July</option>
-                                    <option value="audi">August</option>
-                                    <option value="audi">September</option>
-                                    <option value="audi">October</option>
-                                    <option value="audi">November</option>
-                                    <option value="audi">December</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
 
                                 </select>
                             </ListItem>
@@ -109,7 +114,7 @@ const  PaymentPageBody:React.FC = ()=> {
                     <Collapse in={modes.gpay} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <ListItem>
-                                <input className="input" type="number" placeholder="Enter UPI Id" name="upiId" required/>
+                                <input className="input" placeholder="Enter UPI Id" name="upiId" required/>
                             </ListItem>
                         </List>
                     </Collapse>
@@ -129,6 +134,7 @@ const  PaymentPageBody:React.FC = ()=> {
                 </RadioGroup>
             </FormControl>
         </List>
+        </div>
         <button className="submitButton" onClick={routeChangeOrderPage}>Pay</button>
     </PaymentBodyWrapper>
     </div>
