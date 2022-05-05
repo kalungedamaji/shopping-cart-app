@@ -21,10 +21,8 @@ it("should render payment page header name", () => {
     expect(headerNameElement).toBeInTheDocument();
 })
 
-it("should render go to cart button",()=>{
-    render(<MockPaymentHeader/>)
-    const headerButtonElement = screen.getByRole("button",{name: "Go To Cart"})
-    expect (headerButtonElement).toBeInTheDocument();
-})
+
+
+
 
 

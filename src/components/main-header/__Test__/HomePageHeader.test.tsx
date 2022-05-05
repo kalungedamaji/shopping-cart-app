@@ -24,12 +24,17 @@ it("should render the homepage name", () => {
 });
 
 it("should render the view cart button", () => {
-  const inputHomePageName = "Team 1 Mega Mart";
   render(<MockHeader />);
-
   const shoppingCartButtonElement = screen.getByRole("button", {
     name: "View Cart",
   });
 
   expect(shoppingCartButtonElement).toBeInTheDocument();
+});
+
+it('should render view orders button',  ()=> {
+  render(<MockHeader/>);
+  const viewOrdersButtonElement = screen.getByRole("button",{
+    name:"View Orders",
+  });
 });
