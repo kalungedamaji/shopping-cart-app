@@ -25,7 +25,8 @@ const Header:React.FC<HomePageProps> = (({homePageName}) => {
       } 
 
     const routeChangeOrdersPage = () =>{
-
+        let path = `/orders`;
+        navigate(path);
     }
 
     return (
@@ -34,7 +35,7 @@ const Header:React.FC<HomePageProps> = (({homePageName}) => {
             <IconButton onClick={routeChangeCartPage} color="inherit" aria-label="View Cart">
             <ShoppingCart fontSize='large'/>
             </IconButton>
-            <IconButton onClick={routeChangeCartPage} color="inherit" aria-label="View Orders">
+            <IconButton onClick={routeChangeOrdersPage} color="inherit" aria-label="View Orders">
                 <PlaylistAddCheck fontSize='large'/>
             </IconButton>
         </Wrapper>
