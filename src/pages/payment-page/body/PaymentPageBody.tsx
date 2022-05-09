@@ -10,6 +10,7 @@ import {useEffect, useState} from "react";
 import {CustomerDetail} from "../../../components/customer/Customer";
 import {getCustomer} from "../../../components/customer/api/CustomerApi";
 import {useNavigate} from "react-router-dom";
+import {placeOrder, PlaceOrderDetails} from "../../../components/payment/api/PlaceOrderApi";
 interface PaymentMethods{
     card: boolean;
     gpay: boolean;
@@ -18,21 +19,34 @@ interface PaymentMethods{
 const  PaymentPageBody:React.FC = ()=> {
     const [modes, setMode] = React.useState<PaymentMethods>({card: false, gpay: false, netBanking: false});
     const[customer,setCustomer]= useState<CustomerDetail>();
+    let selectedPaymentMethod: PlaceOrderDetails =getPaymentType();
 
     const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.value)
-
         if(event.target.value=== "debitCard"){
             setMode({card: true, gpay: false, netBanking: false})
         }
         else if(event.target.value=== "googlePay"){
-            setMode({card: false, gpay: true, netBanking: false})
+             setMode({card: false, gpay: true, netBanking: false})
         }
         else if(event.target.value=== "netBanking"){
             setMode({card: false, gpay: false, netBanking: true})
         }
     };
 
+    function getPaymentType() :PlaceOrderDetails{
+        let selectedPaymentType : PlaceOrderDetails = {paymentType: "null"}
+        if(modes.gpay){
+                    selectedPaymentType = {paymentType: "UPI"}
+        }
+        if(modes.card){
+            selectedPaymentType = {paymentType: "DEBIT_CARD"}
+        }
+        if(modes.netBanking){
+            selectedPaymentType = {paymentType: "NET_BANKING"}
+        }
+        return selectedPaymentType
+    }
     useEffect(()=>{
         getCustomer("7ccd09e3-ec5d-41c8-9f4f-713619453c78").then((responseData)=>{
             console.log("I am response data",responseData);
@@ -53,10 +67,10 @@ const  PaymentPageBody:React.FC = ()=> {
 
     let navigate = useNavigate();
     const routeChangeOrderPage = () =>{
+        placeOrder(selectedPaymentMethod,customer?.id);
         let path = '/orders';
         navigate(path);
     }
-
 
     return<div>
     <PaymentBodyWrapper>
@@ -106,6 +120,9 @@ const  PaymentPageBody:React.FC = ()=> {
                             <ListItem>
                                 <input className="input" type="number" placeholder="CVV" name="ucvv" required/>
                             </ListItem>
+                            <ListItem>
+                                <button className="submitButton" onClick={routeChangeOrderPage}>Pay</button>
+                            </ListItem>
                         </List>
                     </Collapse>
                     <ListItem>
@@ -115,6 +132,9 @@ const  PaymentPageBody:React.FC = ()=> {
                         <List component="div" disablePadding>
                             <ListItem>
                                 <input className="input" placeholder="Enter UPI Id" name="upiId" required/>
+                            </ListItem>
+                            <ListItem>
+                                <button className="submitButton" onClick={routeChangeOrderPage}>Pay</button>
                             </ListItem>
                         </List>
                     </Collapse>
@@ -129,13 +149,15 @@ const  PaymentPageBody:React.FC = ()=> {
                             <ListItem>
                                 <input className="input" type="password" placeholder="Password" name="upassword" required/>
                             </ListItem>
+                            <ListItem>
+                                <button className="submitButton" onClick={routeChangeOrderPage}>Pay</button>
+                            </ListItem>
                         </List>
                     </Collapse>
                 </RadioGroup>
             </FormControl>
         </List>
         </div>
-        <button className="submitButton" onClick={routeChangeOrderPage}>Pay</button>
     </PaymentBodyWrapper>
     </div>
    }
