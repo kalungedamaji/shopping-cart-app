@@ -14,10 +14,6 @@ export interface CartProductDetail{
   quantity: number,
 }
 
-export interface CartProductProps{
-  cartProductDetail: CartProductDetail
-}
-
 export interface CartContextType {
   setCartProductList: (cartItemList: CartProductDetail[]) => void,
   cartProductList: CartProductDetail[],
