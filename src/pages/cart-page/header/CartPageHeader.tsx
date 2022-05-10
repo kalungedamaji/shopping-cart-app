@@ -11,7 +11,7 @@ const CartPageHeader:React.FC<CartPageProps> = ({cartPageName}) => {
 
     const cartCtx = useContext(CartContext);
     let navigate = useNavigate();
-    const routeChangePaymentPage = () =>{
+    const navigateToPaymentPage = () =>{
         let path = '/payment';
         navigate(path);
     }
@@ -20,7 +20,7 @@ const CartPageHeader:React.FC<CartPageProps> = ({cartPageName}) => {
             <div>
             <h2>{cartPageName}</h2>
             <h2>Subtotal: {cartCtx.totalCartPrice()}</h2>
-            <button className="submitButton" onClick={routeChangePaymentPage}>Proceed To Buy</button>
+            <button className="submitButton" onClick={navigateToPaymentPage}>Proceed To Buy</button>
             </div>
         </Wrapper>
     )
