@@ -50,7 +50,7 @@ const  PaymentPageBody:React.FC = ()=> {
         return selectedPaymentType
     }
     useEffect(()=>{
-        getCustomer("7ccd09e3-ec5d-41c8-9f4f-713619453c78").then((responseData)=>{
+        getCustomer("cfd14c2f-b0ae-4ce4-b25c-7859fcc1685b").then((responseData)=>{
             console.log("I am response data",responseData);
 
             let customerDetail: CustomerDetail = {

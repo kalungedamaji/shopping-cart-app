@@ -4,8 +4,6 @@ import ProductStore from '../../components/product-store/ProductStore';
 import { ProductDetail} from '../../components/product-store/Product';
 import { ProductContent, getAllProducts, AllProductsServiceResponse,  } from '../../components/product-store/api/ProductApi';
 
-
-
 const  HomePage:React.FC = ()=> {
 
     console.log("Homepage");
@@ -14,7 +12,7 @@ const  HomePage:React.FC = ()=> {
 
     useEffect(()=>{
         getAllProducts().then((responseData: AllProductsServiceResponse)=>{
-            console.log(responseData);  
+            console.log("this is response data",responseData);
             const productDetails: ProductDetail[] = responseData.content.map((content: ProductContent)=>{
                 let productDetail: ProductDetail = {
                     id : content.id,
@@ -34,7 +32,7 @@ const  HomePage:React.FC = ()=> {
     return (
         <div>
             <HomePageHeader homePageName="Meta Mart"/>      
-            <ProductStore homePageProducts={productCollection}/>  
+            <ProductStore homePageProducts={productCollection}/>
         </div>
     );
     
