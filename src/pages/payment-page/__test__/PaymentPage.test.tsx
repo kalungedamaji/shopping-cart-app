@@ -20,7 +20,7 @@ it("should display 'shipping address' title on payment page", ()=>{
 it("should display shipping address on payment page", async ()=>{
     render(<BrowserRouter><PaymentPage /></BrowserRouter>)
     await waitFor(() => {
-        expect(screen.getByText("Indore"))
+        expect(screen.getByText("Lunkad Realty, Office No 802, 8th Floor Sky Vista, Mhada Colony, Viman Nagar, Pune, Maharashtra 411014"))
             .toBeInTheDocument();
     })
 })

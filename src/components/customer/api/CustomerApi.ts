@@ -1,4 +1,5 @@
-import { getResource, ServiceResponse} from "../../../rest-client/RestClient";
+
+import {getResource, ServiceResponse} from "../../../rest-client/RestClient";
 
 export interface CustomerServiceResponse extends ServiceResponse{
     id: string ;

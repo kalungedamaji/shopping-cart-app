@@ -13,6 +13,6 @@ it("should render main header", () => {
 it("should render orders page header ", () => {
 
     render(<BrowserRouter><OrdersPage /></BrowserRouter>)
-    const headerNameElement = screen.getByRole("heading", {name: "Your Orders"})
+    const headerNameElement = screen.getByRole("heading", {name: "My Orders"})
     expect(headerNameElement).toBeInTheDocument();
 })

@@ -46,6 +46,7 @@ export function create<Type ,T> (serviceRequest: ServiceRequest<T>): ()=> Promis
                 "Content-Type": "application/json"
             },
         });
+        console.log("in rest client", response.data)
         return response.data;
     }
 }
@@ -58,5 +59,16 @@ export function update<T>(serviceRequest: ServiceRequest<T>): () => Promise<void
             },
         });
         console.log(response.data);
+    }
+}
+export  function remove<T>(url: string): ()=> Promise<void>{
+    return async(): Promise<void> =>{
+        await axios
+            .delete(url, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
+        console.log("Item deleted");
     }
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 import {screen, render} from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom';
-import OrdersPageHeader from "../header/OrdersPageHeader";
+import OrdersPageHeader from "../OrdersPageHeader";
 
-const inputOrdersPageName = "Your Orders";
+const inputOrdersPageName = "My Orders";
 
 const MockOrdersHeader: React.FC = () => {
     return (
@@ -16,7 +16,7 @@ const MockOrdersHeader: React.FC = () => {
 it("should render orders page header name", () => {
     render(<MockOrdersHeader />)
 
-    const headerNameElement = screen.getByRole("heading", {name: "Your Orders"})
+    const headerNameElement = screen.getByRole("heading", {name: "My Orders"})
 
     expect(headerNameElement).toBeInTheDocument();
 })

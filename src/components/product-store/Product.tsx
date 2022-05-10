@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import CartContext, { CartProductDetail } from "../../store/CartContext";
-import { createCartItem } from "../cart/api/CartApi";
+import {CartItemsContent, createCartItem} from "../cart/api/CartApi";
 import { ProductWrapper } from "./ProductCard.style";
 
 export interface ProductDetail {
@@ -21,19 +21,19 @@ const Product: React.FC<ProductProps> = ({ productDetail }) => {
 
   function itemAddHandler() {
     let cartItem: CartProductDetail = {
-      customerId: "b4f5f670-269c-42d1-8753-89a212344c66",
-      id: productDetail.id,
+      customerId: "cfd14c2f-b0ae-4ce4-b25c-7859fcc1685b",
+      id: " ",
       name : productDetail.name,
       image : productDetail.image,
       price : productDetail.price,
       quantity : 1
     }
-    cartCtx.addItemsInCart(cartItem);
-    createCartItem(cartItem);
+    createCartItem(cartItem).then((data:CartItemsContent)=>{
+        console.log("content id",data)
+        cartItem.id=data.id;
+        cartCtx.addItemsInCart(cartItem);
+    });
   }
-
-  
-
   return (
     <ProductWrapper>
     <div className="Card">

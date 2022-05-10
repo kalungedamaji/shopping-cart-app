@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import CartContext, { CartProductDetail} from "../../store/CartContext";
 import Swal from 'sweetalert2';
 import { ProductWrapper } from "./Cart.style";
-import {updateCartItems } from "./api/CartApi";
+import {removeCartItem, updateCartItems} from "./api/CartApi";
 
 export interface CartProps {
   cartProductDetail: CartProductDetail;
@@ -39,6 +39,7 @@ function decrementHandler() {
         allowOutsideClick: false
     }).then((result) => {
         if(result.isConfirmed){
+            removeCartItem(cartProductDetail);
             cartCtx.removeItemsFromCart(cartProductDetail);
             setRenderedCartList();
             console.log("is confirmed clicked");
@@ -67,6 +68,7 @@ function removeItemHandler() {
 }).then((result) => {
     if(result.isConfirmed){
         cartCtx.removeItemsFromCart(cartProductDetail);
+        removeCartItem(cartProductDetail);
         setRenderedCartList();
     }
 })

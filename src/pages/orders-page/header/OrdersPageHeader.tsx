@@ -1,4 +1,5 @@
 import React from 'react'
+import {Wrapper} from "./OrdersPageHeader.style";
 
 interface OrdersPageHeaderProps{
     orderPageName: string
@@ -6,10 +7,11 @@ interface OrdersPageHeaderProps{
 
 const PaymentPageHeader:React.FC<OrdersPageHeaderProps> = ({orderPageName}) => {
 
-    return (
-        <div>
+    return (<Wrapper>
+        <div className="Header">
             <h2>{orderPageName}</h2>
         </div>
+</Wrapper>
     )
 }
 

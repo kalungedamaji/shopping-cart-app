@@ -1,7 +1,9 @@
 import { createContext } from "react";
-import { getAllCartItems, AllCartItemsServiceResponse, CartItemsContent, createCartItem, CartItemServiceResponse } from "../components/cart/api/CartApi";
-import { ProductDetail } from "../components/product-store/Product";
-
+import {
+    getAllCartItems,
+    AllCartItemsServiceResponse,
+    CartItemContent
+} from "../components/cart/api/CartApi";
 
 export interface CartProductDetail{
   customerId: string,
@@ -63,11 +65,11 @@ export const CartContextProvider : React.FC = (props) => {
          }
     })
   }
-  getAllCartItems("b4f5f670-269c-42d1-8753-89a212344c66").then((responseData: AllCartItemsServiceResponse)=>{
+  getAllCartItems("cfd14c2f-b0ae-4ce4-b25c-7859fcc1685b").then((responseData: AllCartItemsServiceResponse)=>{
     console.log(responseData);  
-    const cartItemDetails: CartProductDetail[] = responseData.content.map((content: CartItemsContent)=>{
+    const cartItemDetails: CartProductDetail[] = responseData.content.map((content: CartItemContent)=>{
         let cartItemDetail: CartProductDetail = {
-            customerId : "b4f5f670-269c-42d1-8753-89a212344c66",
+            customerId : "cfd14c2f-b0ae-4ce4-b25c-7859fcc1685b",
             id : content.id,
             name : content.name,
             image : content.image,
