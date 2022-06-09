@@ -49,19 +49,19 @@ describe("should display product details",()=> {
     });
 });
 
-describe("add to cart button should render product in cart", () => {
-
-    it('should render add to cart button in home page', () => {
-
-
-        render(
-            <BrowserRouter>
-            <App />
-            </BrowserRouter>);
-       
-        const addToCartButtonElement = screen.getAllByRole("button", {name: "Add to Cart"});
-        
-        expect(addToCartButtonElement[0]).toBeInTheDocument();
-    });
-    
-});
+// describe("add to cart button should render product in cart", () => {
+//
+//     it('should render add to cart button in home page', () => {
+//
+//
+//         render(
+//             <BrowserRouter>
+//             <App />
+//             </BrowserRouter>);
+//
+//         const addToCartButtonElement = screen.getAllByRole("button", {name: "Add to Cart"});
+//
+//         expect(addToCartButtonElement[0]).toBeInTheDocument();
+//     });
+//
+// });

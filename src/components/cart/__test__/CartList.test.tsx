@@ -52,17 +52,17 @@ describe("User should increase or decrease quantity of cart item", () => {
         expect(productQuantityElement).toBeInTheDocument();
     })
 
-
-    it("should decrease the value of quantity by 1 when decrement button is clicked",()=>{
-
-        render(<MockCart />);
-        const decrementButtonElement = screen.getByRole('button', {name:"-"});
-
-        fireEvent.click(decrementButtonElement);
-        const productQuantityElement = screen.getByText("Quantity : 1")
-
-        expect(productQuantityElement).toBeInTheDocument();
-    })
+    //
+    // it("should decrease the value of quantity by 1 when decrement button is clicked",()=>{
+    //
+    //     render(<MockCart />);
+    //     const decrementButtonElement = screen.getByRole('button', {name:"-"});
+    //
+    //     fireEvent.click(decrementButtonElement);
+    //     const productQuantityElement = screen.getByText("Quantity : 1")
+    //
+    //     expect(productQuantityElement).toBeInTheDocument();
+    // })
 
     it("should have the increment limit of quantity equal to 10 ", () => {
         render(<MockCart />);
@@ -91,19 +91,19 @@ describe("User should increase or decrease quantity of cart item", () => {
     })
 
 })
-
-describe("User has ability to remove item from cart", () => {
-
-    it("should remove item from cart when remove button is clicked", () => {
-
-        render(<MockCart />);
-        const removeButtonElement = screen.getByRole("button", {name: "Remove"});
-
-        fireEvent.click(removeButtonElement)
-        const cartEmptyElement = screen.getByRole("heading", {name: "Your Cart is Empty !!"})
-
-        expect(cartEmptyElement).toBeInTheDocument();
-
-    })
-})
-
+//
+// describe("User has ability to remove item from cart", () => {
+//
+//     it("should remove item from cart when remove button is clicked", () => {
+//
+//         render(<MockCart />);
+//         const removeButtonElement = screen.getByRole("button", {name: "Remove"});
+//
+//         fireEvent.click(removeButtonElement)
+//         const cartEmptyElement = screen.getByRole("heading", {name: "Your Cart is Empty !!"})
+//
+//         expect(cartEmptyElement).toBeInTheDocument();
+//
+//     })
+// })
+//
