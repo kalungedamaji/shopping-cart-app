@@ -61,7 +61,7 @@ export function update<T>(serviceRequest: ServiceRequest<T>): () => Promise<void
         console.log(response.data);
     }
 }
-export  function remove<T>(url: string): ()=> Promise<void>{
+export  function remove(url: string): ()=> Promise<void>{
     return async(): Promise<void> =>{
         await axios
             .delete(url, {

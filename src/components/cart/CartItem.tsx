@@ -9,18 +9,17 @@ export interface CartProps {
   setRenderedCartList: ()=>void
 }
 
-const INITIAL_QUANTITY = 1;
 
 const Cart: React.FC<CartProps> = ({ cartProductDetail, setRenderedCartList }) => {
 
  console.log("in cartItem", cartProductDetail);
   const cartCtx = useContext(CartContext);
-  const [quantity, setQuantity] = useState(INITIAL_QUANTITY);
+  const [toggleQuantity, setToggleQuantity] = useState<boolean>(false);
 
 function incrementHandler() {
     cartProductDetail.quantity = cartProductDetail.quantity+1;
     updateCartItems(cartProductDetail);
-    setQuantity(cartProductDetail.quantity);
+    setToggleQuantity(!toggleQuantity);
     setRenderedCartList();
     console.log("quantity is incremented")
 }
@@ -47,7 +46,7 @@ function decrementHandler() {
     })
   }
   else {
-  setQuantity(cartProductDetail.quantity);
+  setToggleQuantity(!toggleQuantity);
   setRenderedCartList();
   cartProductDetail.quantity = cartProductDetail.quantity-1; 
   updateCartItems(cartProductDetail);

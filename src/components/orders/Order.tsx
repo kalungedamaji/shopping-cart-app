@@ -1,5 +1,5 @@
 import React from "react";
-import OrderItem from "./order-item/OrdersOrderItem";
+//import OrderItem from "./order-item/OrdersOrderItem";
 import OrdersOrderItem from "./order-item/OrdersOrderItem";
 import {OrderWrapper} from "./Order.style";
 

@@ -65,7 +65,7 @@ export const CartContextProvider : React.FC = (props) => {
     console.log(responseData);  
     const cartItemDetails: CartProductDetail[] = responseData.content.map((content: CartItemContent)=>{
         let cartItemDetail: CartProductDetail = {
-            customerId : "cfd14c2f-b0ae-4ce4-b25c-7859fcc1685b",
+            customerId : "b5569a58-1324-49b8-8f23-9014def23817",
             id : content.id,
             name : content.name,
             image : content.image,
