@@ -43,7 +43,7 @@ export const CartContextProvider : React.FC = (props) => {
   }
   function cartTotalPriceHandler() {
     let price = 0;
-    inCart.map((cartProduct : CartProductDetail)=>{
+    inCart.forEach((cartProduct : CartProductDetail)=>{
         price = price + (cartProduct.quantity * cartProduct.price)
     })
     return price;
